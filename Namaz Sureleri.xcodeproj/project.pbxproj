@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D5D68FEA9114061335E2582 /* Pods_Namaz_Sureleri_Namaz_SureleriUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BFC363F3BB3BEB6322161B /* Pods_Namaz_Sureleri_Namaz_SureleriUITests.framework */; };
+		6559462F3AEDF9F3609C56E5 /* Pods_Namaz_Sureleri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A259C931BF161C32DC5F50D /* Pods_Namaz_Sureleri.framework */; };
+		A2887A7C7153247C47925FF6 /* Pods_Namaz_SureleriTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFC6B1B8BC230CCD1D39DBC /* Pods_Namaz_SureleriTests.framework */; };
+		B774E00328B1427900BAB3F3 /* NamazViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E00228B1427900BAB3F3 /* NamazViewController.swift */; };
+		B774E00528B1455A00BAB3F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E00428B1455A00BAB3F3 /* Extensions.swift */; };
+		B774E00728B1543B00BAB3F3 /* OtherAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E00628B1543B00BAB3F3 /* OtherAppsViewController.swift */; };
+		B774E00C28B161E700BAB3F3 /* HadisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E00928B161E700BAB3F3 /* HadisViewController.swift */; };
+		B774E00D28B161E700BAB3F3 /* HadisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B774E00A28B161E700BAB3F3 /* HadisTableViewCell.xib */; };
+		B774E00E28B161E700BAB3F3 /* HadisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E00B28B161E700BAB3F3 /* HadisTableViewCell.swift */; };
+		B774E01128B166B100BAB3F3 /* AdhanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E01028B166B100BAB3F3 /* AdhanViewController.swift */; };
+		B774E01328B166FC00BAB3F3 /* KibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E01228B166FC00BAB3F3 /* KibleViewController.swift */; };
+		B774E01528B17AB000BAB3F3 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E01428B17AB000BAB3F3 /* LoadingViewController.swift */; };
+		B774E01728B17BCA00BAB3F3 /* prayer.json in Resources */ = {isa = PBXBuildFile; fileRef = B774E01628B17BC900BAB3F3 /* prayer.json */; };
+		B774E01928B17BE500BAB3F3 /* download.json in Resources */ = {isa = PBXBuildFile; fileRef = B774E01828B17BE500BAB3F3 /* download.json */; };
+		B774E01D28B17C6C00BAB3F3 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E01B28B17C6C00BAB3F3 /* SettingsTableViewCell.swift */; };
+		B774E01E28B17C6C00BAB3F3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E01C28B17C6C00BAB3F3 /* SettingsViewController.swift */; };
 		B791AF9A28B0CA5800BCDF29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B791AF9928B0CA5800BCDF29 /* AppDelegate.swift */; };
 		B791AF9C28B0CA5800BCDF29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B791AF9B28B0CA5800BCDF29 /* SceneDelegate.swift */; };
 		B791AF9E28B0CA5800BCDF29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B791AF9D28B0CA5800BCDF29 /* ViewController.swift */; };
@@ -37,6 +53,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A259C931BF161C32DC5F50D /* Pods_Namaz_Sureleri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Namaz_Sureleri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45BFC363F3BB3BEB6322161B /* Pods_Namaz_Sureleri_Namaz_SureleriUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Namaz_Sureleri_Namaz_SureleriUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66363B03ADF95FFBBCF21C14 /* Pods-Namaz SureleriTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Namaz SureleriTests.release.xcconfig"; path = "Target Support Files/Pods-Namaz SureleriTests/Pods-Namaz SureleriTests.release.xcconfig"; sourceTree = "<group>"; };
+		72B39510B41E33AE60B19B99 /* Pods-Namaz Sureleri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Namaz Sureleri.release.xcconfig"; path = "Target Support Files/Pods-Namaz Sureleri/Pods-Namaz Sureleri.release.xcconfig"; sourceTree = "<group>"; };
+		7D02D1BF48F56A0264F57BE3 /* Pods-Namaz Sureleri-Namaz SureleriUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Namaz Sureleri-Namaz SureleriUITests.debug.xcconfig"; path = "Target Support Files/Pods-Namaz Sureleri-Namaz SureleriUITests/Pods-Namaz Sureleri-Namaz SureleriUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8DFC6B1B8BC230CCD1D39DBC /* Pods_Namaz_SureleriTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Namaz_SureleriTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B774E00228B1427900BAB3F3 /* NamazViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamazViewController.swift; sourceTree = "<group>"; };
+		B774E00428B1455A00BAB3F3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B774E00628B1543B00BAB3F3 /* OtherAppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherAppsViewController.swift; sourceTree = "<group>"; };
+		B774E00928B161E700BAB3F3 /* HadisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HadisViewController.swift; sourceTree = "<group>"; };
+		B774E00A28B161E700BAB3F3 /* HadisTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HadisTableViewCell.xib; sourceTree = "<group>"; };
+		B774E00B28B161E700BAB3F3 /* HadisTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HadisTableViewCell.swift; sourceTree = "<group>"; };
+		B774E01028B166B100BAB3F3 /* AdhanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdhanViewController.swift; sourceTree = "<group>"; };
+		B774E01228B166FC00BAB3F3 /* KibleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KibleViewController.swift; sourceTree = "<group>"; };
+		B774E01428B17AB000BAB3F3 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		B774E01628B17BC900BAB3F3 /* prayer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = prayer.json; sourceTree = "<group>"; };
+		B774E01828B17BE500BAB3F3 /* download.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = download.json; sourceTree = "<group>"; };
+		B774E01B28B17C6C00BAB3F3 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		B774E01C28B17C6C00BAB3F3 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B791AF9628B0CA5800BCDF29 /* Namaz Sureleri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Namaz Sureleri.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B791AF9928B0CA5800BCDF29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B791AF9B28B0CA5800BCDF29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +86,9 @@
 		B791AFB928B0CA5A00BCDF29 /* Namaz SureleriUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Namaz SureleriUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B791AFBD28B0CA5A00BCDF29 /* Namaz_SureleriUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Namaz_SureleriUITests.swift; sourceTree = "<group>"; };
 		B791AFBF28B0CA5A00BCDF29 /* Namaz_SureleriUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Namaz_SureleriUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BE4EF32028524E7FD6B67A33 /* Pods-Namaz Sureleri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Namaz Sureleri.debug.xcconfig"; path = "Target Support Files/Pods-Namaz Sureleri/Pods-Namaz Sureleri.debug.xcconfig"; sourceTree = "<group>"; };
+		E229712DAC67CFF0C810DFE5 /* Pods-Namaz SureleriTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Namaz SureleriTests.debug.xcconfig"; path = "Target Support Files/Pods-Namaz SureleriTests/Pods-Namaz SureleriTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FA45D5EFBC64094B354EAA3A /* Pods-Namaz Sureleri-Namaz SureleriUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Namaz Sureleri-Namaz SureleriUITests.release.xcconfig"; path = "Target Support Files/Pods-Namaz Sureleri-Namaz SureleriUITests/Pods-Namaz Sureleri-Namaz SureleriUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6559462F3AEDF9F3609C56E5 /* Pods_Namaz_Sureleri.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2887A7C7153247C47925FF6 /* Pods_Namaz_SureleriTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +112,63 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D5D68FEA9114061335E2582 /* Pods_Namaz_Sureleri_Namaz_SureleriUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7599C1028FFF476FE44364FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE4EF32028524E7FD6B67A33 /* Pods-Namaz Sureleri.debug.xcconfig */,
+				72B39510B41E33AE60B19B99 /* Pods-Namaz Sureleri.release.xcconfig */,
+				7D02D1BF48F56A0264F57BE3 /* Pods-Namaz Sureleri-Namaz SureleriUITests.debug.xcconfig */,
+				FA45D5EFBC64094B354EAA3A /* Pods-Namaz Sureleri-Namaz SureleriUITests.release.xcconfig */,
+				E229712DAC67CFF0C810DFE5 /* Pods-Namaz SureleriTests.debug.xcconfig */,
+				66363B03ADF95FFBBCF21C14 /* Pods-Namaz SureleriTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		797AFD38AD892410EBD2162D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A259C931BF161C32DC5F50D /* Pods_Namaz_Sureleri.framework */,
+				45BFC363F3BB3BEB6322161B /* Pods_Namaz_Sureleri_Namaz_SureleriUITests.framework */,
+				8DFC6B1B8BC230CCD1D39DBC /* Pods_Namaz_SureleriTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B774E00828B161E700BAB3F3 /* Hadis */ = {
+			isa = PBXGroup;
+			children = (
+				B774E00928B161E700BAB3F3 /* HadisViewController.swift */,
+				B774E00A28B161E700BAB3F3 /* HadisTableViewCell.xib */,
+				B774E00B28B161E700BAB3F3 /* HadisTableViewCell.swift */,
+			);
+			path = Hadis;
+			sourceTree = "<group>";
+		};
+		B774E00F28B166B100BAB3F3 /* AdhanViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B774E01028B166B100BAB3F3 /* AdhanViewController.swift */,
+			);
+			path = AdhanViewController;
+			sourceTree = "<group>";
+		};
+		B774E01A28B17C6C00BAB3F3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B774E01B28B17C6C00BAB3F3 /* SettingsTableViewCell.swift */,
+				B774E01C28B17C6C00BAB3F3 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		B791AF8D28B0CA5800BCDF29 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +176,8 @@
 				B791AFB228B0CA5A00BCDF29 /* Namaz SureleriTests */,
 				B791AFBC28B0CA5A00BCDF29 /* Namaz SureleriUITests */,
 				B791AF9728B0CA5800BCDF29 /* Products */,
+				7599C1028FFF476FE44364FC /* Pods */,
+				797AFD38AD892410EBD2162D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,7 +197,17 @@
 				B791AF9928B0CA5800BCDF29 /* AppDelegate.swift */,
 				B791AF9B28B0CA5800BCDF29 /* SceneDelegate.swift */,
 				B791AF9D28B0CA5800BCDF29 /* ViewController.swift */,
+				B774E00228B1427900BAB3F3 /* NamazViewController.swift */,
+				B774E00628B1543B00BAB3F3 /* OtherAppsViewController.swift */,
+				B774E01228B166FC00BAB3F3 /* KibleViewController.swift */,
+				B774E01428B17AB000BAB3F3 /* LoadingViewController.swift */,
+				B774E01828B17BE500BAB3F3 /* download.json */,
+				B774E01628B17BC900BAB3F3 /* prayer.json */,
+				B774E00428B1455A00BAB3F3 /* Extensions.swift */,
 				B791AF9F28B0CA5800BCDF29 /* Main.storyboard */,
+				B774E01A28B17C6C00BAB3F3 /* Settings */,
+				B774E00F28B166B100BAB3F3 /* AdhanViewController */,
+				B774E00828B161E700BAB3F3 /* Hadis */,
 				B791AFA528B0CA5900BCDF29 /* Assets.xcassets */,
 				B791AFA728B0CA5900BCDF29 /* LaunchScreen.storyboard */,
 				B791AFAA28B0CA5900BCDF29 /* Info.plist */,
@@ -137,9 +240,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B791AFC328B0CA5A00BCDF29 /* Build configuration list for PBXNativeTarget "Namaz Sureleri" */;
 			buildPhases = (
+				0D4FABEA23E284C845677734 /* [CP] Check Pods Manifest.lock */,
 				B791AF9228B0CA5800BCDF29 /* Sources */,
 				B791AF9328B0CA5800BCDF29 /* Frameworks */,
 				B791AF9428B0CA5800BCDF29 /* Resources */,
+				E1CE3F0AE87C0F4D647E3DDE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +259,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B791AFC628B0CA5A00BCDF29 /* Build configuration list for PBXNativeTarget "Namaz SureleriTests" */;
 			buildPhases = (
+				6A8942CA7D7C56B12EB29F69 /* [CP] Check Pods Manifest.lock */,
 				B791AFAB28B0CA5A00BCDF29 /* Sources */,
 				B791AFAC28B0CA5A00BCDF29 /* Frameworks */,
 				B791AFAD28B0CA5A00BCDF29 /* Resources */,
@@ -172,9 +278,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B791AFC928B0CA5A00BCDF29 /* Build configuration list for PBXNativeTarget "Namaz SureleriUITests" */;
 			buildPhases = (
+				78A251E7C0FE45E129A475D1 /* [CP] Check Pods Manifest.lock */,
 				B791AFB528B0CA5A00BCDF29 /* Sources */,
 				B791AFB628B0CA5A00BCDF29 /* Frameworks */,
 				B791AFB728B0CA5A00BCDF29 /* Resources */,
+				79936E97E1D9B8AF39DC6E8C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,7 +344,10 @@
 			files = (
 				B791AFA928B0CA5900BCDF29 /* LaunchScreen.storyboard in Resources */,
 				B791AFA628B0CA5900BCDF29 /* Assets.xcassets in Resources */,
+				B774E01728B17BCA00BAB3F3 /* prayer.json in Resources */,
 				B791AFA128B0CA5800BCDF29 /* Main.storyboard in Resources */,
+				B774E00D28B161E700BAB3F3 /* HadisTableViewCell.xib in Resources */,
+				B774E01928B17BE500BAB3F3 /* download.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,15 +367,128 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D4FABEA23E284C845677734 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Namaz Sureleri-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A8942CA7D7C56B12EB29F69 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Namaz SureleriTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78A251E7C0FE45E129A475D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Namaz Sureleri-Namaz SureleriUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79936E97E1D9B8AF39DC6E8C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Namaz Sureleri-Namaz SureleriUITests/Pods-Namaz Sureleri-Namaz SureleriUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Namaz Sureleri-Namaz SureleriUITests/Pods-Namaz Sureleri-Namaz SureleriUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Namaz Sureleri-Namaz SureleriUITests/Pods-Namaz Sureleri-Namaz SureleriUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1CE3F0AE87C0F4D647E3DDE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Namaz Sureleri/Pods-Namaz Sureleri-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Namaz Sureleri/Pods-Namaz Sureleri-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Namaz Sureleri/Pods-Namaz Sureleri-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B791AF9228B0CA5800BCDF29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B774E00728B1543B00BAB3F3 /* OtherAppsViewController.swift in Sources */,
+				B774E01128B166B100BAB3F3 /* AdhanViewController.swift in Sources */,
 				B791AFA428B0CA5800BCDF29 /* Namaz_Sureleri.xcdatamodeld in Sources */,
+				B774E00528B1455A00BAB3F3 /* Extensions.swift in Sources */,
 				B791AF9E28B0CA5800BCDF29 /* ViewController.swift in Sources */,
+				B774E01D28B17C6C00BAB3F3 /* SettingsTableViewCell.swift in Sources */,
+				B774E00C28B161E700BAB3F3 /* HadisViewController.swift in Sources */,
+				B774E00328B1427900BAB3F3 /* NamazViewController.swift in Sources */,
+				B774E00E28B161E700BAB3F3 /* HadisTableViewCell.swift in Sources */,
+				B774E01E28B17C6C00BAB3F3 /* SettingsViewController.swift in Sources */,
 				B791AF9A28B0CA5800BCDF29 /* AppDelegate.swift in Sources */,
 				B791AF9C28B0CA5800BCDF29 /* SceneDelegate.swift in Sources */,
+				B774E01328B166FC00BAB3F3 /* KibleViewController.swift in Sources */,
+				B774E01528B17AB000BAB3F3 /* LoadingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +660,7 @@
 		};
 		B791AFC428B0CA5A00BCDF29 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE4EF32028524E7FD6B67A33 /* Pods-Namaz Sureleri.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -464,6 +689,7 @@
 		};
 		B791AFC528B0CA5A00BCDF29 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72B39510B41E33AE60B19B99 /* Pods-Namaz Sureleri.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -492,6 +718,7 @@
 		};
 		B791AFC728B0CA5A00BCDF29 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E229712DAC67CFF0C810DFE5 /* Pods-Namaz SureleriTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +739,7 @@
 		};
 		B791AFC828B0CA5A00BCDF29 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66363B03ADF95FFBBCF21C14 /* Pods-Namaz SureleriTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -532,6 +760,7 @@
 		};
 		B791AFCA28B0CA5A00BCDF29 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D02D1BF48F56A0264F57BE3 /* Pods-Namaz Sureleri-Namaz SureleriUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -550,6 +779,7 @@
 		};
 		B791AFCB28B0CA5A00BCDF29 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA45D5EFBC64094B354EAA3A /* Pods-Namaz Sureleri-Namaz SureleriUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

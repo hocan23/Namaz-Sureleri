@@ -10,6 +10,7 @@
 		2D5D68FEA9114061335E2582 /* Pods_Namaz_Sureleri_Namaz_SureleriUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BFC363F3BB3BEB6322161B /* Pods_Namaz_Sureleri_Namaz_SureleriUITests.framework */; };
 		6559462F3AEDF9F3609C56E5 /* Pods_Namaz_Sureleri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A259C931BF161C32DC5F50D /* Pods_Namaz_Sureleri.framework */; };
 		A2887A7C7153247C47925FF6 /* Pods_Namaz_SureleriTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFC6B1B8BC230CCD1D39DBC /* Pods_Namaz_SureleriTests.framework */; };
+		B773E22D28B2B9D300F4A069 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B773E22C28B2B9D300F4A069 /* StoreKit.framework */; };
 		B774E00328B1427900BAB3F3 /* NamazViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E00228B1427900BAB3F3 /* NamazViewController.swift */; };
 		B774E00528B1455A00BAB3F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E00428B1455A00BAB3F3 /* Extensions.swift */; };
 		B774E00728B1543B00BAB3F3 /* OtherAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E00628B1543B00BAB3F3 /* OtherAppsViewController.swift */; };
@@ -59,6 +60,8 @@
 		72B39510B41E33AE60B19B99 /* Pods-Namaz Sureleri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Namaz Sureleri.release.xcconfig"; path = "Target Support Files/Pods-Namaz Sureleri/Pods-Namaz Sureleri.release.xcconfig"; sourceTree = "<group>"; };
 		7D02D1BF48F56A0264F57BE3 /* Pods-Namaz Sureleri-Namaz SureleriUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Namaz Sureleri-Namaz SureleriUITests.debug.xcconfig"; path = "Target Support Files/Pods-Namaz Sureleri-Namaz SureleriUITests/Pods-Namaz Sureleri-Namaz SureleriUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DFC6B1B8BC230CCD1D39DBC /* Pods_Namaz_SureleriTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Namaz_SureleriTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B773E22C28B2B9D300F4A069 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		B773E22E28B2BA5C00F4A069 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		B774E00228B1427900BAB3F3 /* NamazViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamazViewController.swift; sourceTree = "<group>"; };
 		B774E00428B1455A00BAB3F3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B774E00628B1543B00BAB3F3 /* OtherAppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherAppsViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6559462F3AEDF9F3609C56E5 /* Pods_Namaz_Sureleri.framework in Frameworks */,
+				B773E22D28B2B9D300F4A069 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +139,7 @@
 		797AFD38AD892410EBD2162D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B773E22C28B2B9D300F4A069 /* StoreKit.framework */,
 				1A259C931BF161C32DC5F50D /* Pods_Namaz_Sureleri.framework */,
 				45BFC363F3BB3BEB6322161B /* Pods_Namaz_Sureleri_Namaz_SureleriUITests.framework */,
 				8DFC6B1B8BC230CCD1D39DBC /* Pods_Namaz_SureleriTests.framework */,
@@ -199,6 +204,7 @@
 				B791AF9D28B0CA5800BCDF29 /* ViewController.swift */,
 				B774E00228B1427900BAB3F3 /* NamazViewController.swift */,
 				B774E00628B1543B00BAB3F3 /* OtherAppsViewController.swift */,
+				B773E22E28B2BA5C00F4A069 /* Configuration.storekit */,
 				B774E01228B166FC00BAB3F3 /* KibleViewController.swift */,
 				B774E01428B17AB000BAB3F3 /* LoadingViewController.swift */,
 				B774E01828B17BE500BAB3F3 /* download.json */,
@@ -666,9 +672,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PCV3VLUN64;
+				DEVELOPMENT_TEAM = CDLRAYVNZ9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Namaz Sureleri/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -679,7 +687,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dsa.Namaz-Sureleri";
+				PRODUCT_BUNDLE_IDENTIFIER = "dsa.Namaz-Surelerisds";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -695,9 +703,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PCV3VLUN64;
+				DEVELOPMENT_TEAM = CDLRAYVNZ9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Namaz Sureleri/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -708,7 +718,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dsa.Namaz-Sureleri";
+				PRODUCT_BUNDLE_IDENTIFIER = "dsa.Namaz-Surelerisds";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

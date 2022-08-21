@@ -10,8 +10,14 @@ import CoreLocation
 import Adhan
 import GoogleMobileAds
 import Lottie
+import StoreKit
 
 class KibleViewController: UIViewController,GADBannerViewDelegate, GADFullScreenContentDelegate  {
+    
+    @IBOutlet weak var backHeightCons: NSLayoutConstraint!
+    
+    @IBOutlet weak var backWidthCons: NSLayoutConstraint!
+    
     
     let animationView = AnimationView()
     @IBOutlet weak var backView: UIImageView!
@@ -31,7 +37,10 @@ class KibleViewController: UIViewController,GADBannerViewDelegate, GADFullScreen
     @IBOutlet weak var kiblaArrow: UIImageView!
     
     @IBOutlet weak var kibleView: UIImageView!
-    
+    var models = [SKProduct]()
+    enum Products : String,CaseIterable{
+        case removeAds = "com.SIX11.elifba.remove"
+    }
     var isAd : Bool = false
 
     private let loadingVC = LoadingViewController()
@@ -110,6 +119,11 @@ class KibleViewController: UIViewController,GADBannerViewDelegate, GADFullScreen
         bannerView.delegate = self
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
+        if UIDevice.current.userInterfaceIdiom == .pad  {
+            backHeightCons.constant = 60
+            backWidthCons.constant = 60
+        }
     }
     
     @objc func appMovedToForeground() {
@@ -117,6 +131,17 @@ class KibleViewController: UIViewController,GADBannerViewDelegate, GADFullScreen
         
         
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        get {
+            return .portrait
+
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         localAnimation()
 
@@ -146,11 +171,22 @@ class KibleViewController: UIViewController,GADBannerViewDelegate, GADFullScreen
     }
     
     @objc func removeViewTapped(){
-        
+        if SKPaymentQueue.canMakePayments(){
+            let set :  Set<String> = [Products.removeAds.rawValue]
+            let productRequest = SKProductsRequest(productIdentifiers: set)
+            productRequest.delegate = self
+            productRequest.start()
+            
+        }
     }
     @objc func backViewTapped(){
-        dismiss(animated: true)
-    }
+        if interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+            isAd = true
+        } else {
+            print("Ad wasn't ready")
+            self.dismiss(animated: true)
+        }    }
     func createAdd() {
         let request = GADRequest()
         interstitial?.fullScreenContentDelegate = self
@@ -349,3 +385,52 @@ extension KibleViewController: CLLocationManagerDelegate {
     }
     }
 
+extension KibleViewController: SKProductsRequestDelegate, SKPaymentTransactionObserver{
+    
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        print(response.products.first)
+        if let oproduct = response.products.first{
+            
+            self.purchase(aproduct: oproduct)
+        }
+    }
+    
+    func purchase ( aproduct: SKProduct){
+        let payment = SKPayment(product: aproduct)
+        SKPaymentQueue.default().add(self)
+        SKPaymentQueue.default().add(payment)
+        
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction in transactions {
+            switch transaction.transactionState{
+            case .purchasing:
+                print("pur")
+            case .purchased:
+                SKPaymentQueue.default().finishTransaction(transaction)
+                Utils.saveLocal(array: "premium", key: "purchase")
+                Utils.isPremium = "premium"
+
+            case .failed:
+                SKPaymentQueue.default().finishTransaction(transaction)
+            case .restored:
+                Utils.saveLocal(array: "premium", key: "purchase")
+                Utils.isPremium = "premium"
+
+                print("restore")
+            case .deferred:
+                print("deffered")
+            default: break
+            }
+            
+        }
+    }
+    
+    func fetchProducts(){
+        let request = SKProductsRequest(productIdentifiers: Set(Products.allCases.compactMap({$0.rawValue})))
+        request.delegate = self
+        request.start()
+    }
+    
+}

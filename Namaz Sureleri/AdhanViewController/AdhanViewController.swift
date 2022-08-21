@@ -9,15 +9,25 @@ import UIKit
 import Lottie
 import GoogleMobileAds
 import CoreLocation
+import StoreKit
 
-class AdhanViewController: UIViewController, GADBannerViewDelegate, GADFullScreenContentDelegate, CLLocationManagerDelegate {
-  
+class AdhanViewController: UIViewController, CLLocationManagerDelegate {
+    var models = [SKProduct]()
+    enum Products : String,CaseIterable{
+        case removeAds = "com.SIX11.elifba.remove"
+    }
     var bannerView: GADBannerView!
-    let animationView = AnimationView()
     private var interstitial: GADInterstitialAd?
+    var animationView = AnimationView ()
     var isAd : Bool = false
     let locationManager = CLLocationManager()
     @IBOutlet weak var removeView: UIImageView!
+    
+    @IBOutlet weak var backWidthCons: NSLayoutConstraint!
+    
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var backHeightCons: NSLayoutConstraint!
+    
     
     @IBOutlet weak var backView: UIImageView!
     @IBOutlet weak var adhanView6: UIView!
@@ -42,8 +52,7 @@ class AdhanViewController: UIViewController, GADBannerViewDelegate, GADFullScree
         super.viewDidLoad()
         prayerAnimation()
         altViewHeight.constant = view.bounds.height*0.45
-        createAdd()
-        
+        arrangeShadowforViews(vieww: stackView)
         adhanView6.layer.cornerRadius = 20
         adhanView6.layer.masksToBounds = true
         adhanView6.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
@@ -65,18 +74,51 @@ class AdhanViewController: UIViewController, GADBannerViewDelegate, GADFullScree
         backView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backViewTapped)))
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        if UIDevice.current.userInterfaceIdiom == .pad  {
+            backHeightCons.constant = 60
+            backWidthCons.constant = 60
+        }
     }
     
     @objc func removeViewTapped(){
-        
+        if SKPaymentQueue.canMakePayments(){
+            let set :  Set<String> = [Products.removeAds.rawValue]
+            let productRequest = SKProductsRequest(productIdentifiers: set)
+            productRequest.delegate = self
+            productRequest.start()
+            
+        }
     }
     @objc func backViewTapped(){
-        dismiss(animated: true)
-    }
+        if interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+            isAd = true
+        } else {
+            print("Ad wasn't ready")
+            self.dismiss(animated: true)
+        }    }
     
     @objc func appMovedToForeground() {
         locationPermissionControl()
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
+    func arrangeShadowforViews (vieww:UIView){
+        vieww.layer.cornerRadius = 20
+        vieww.layer.masksToBounds = false
+        vieww.layer.shadowColor = UIColor(red: 35/255, green: 75/255, blue: 113/255, alpha: 0.1).cgColor
+        vieww.layer.shadowOffset = CGSize(width: 0, height: 5)
+        vieww.layer.shadowRadius = 10
+        vieww.layer.shadowOpacity = 1
+    }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        get {
+            return .portrait
+
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         locationPermissionControl()
 //        backButton.setTitle(Helper.adhanTimes[Helper.SelectedlanguageNumber], for: .normal)
@@ -86,50 +128,8 @@ class AdhanViewController: UIViewController, GADBannerViewDelegate, GADFullScree
         }
     }
     
-    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-        // Add banner to view and add constraints as above.
-        addBannerViewToView(bannerView)
-    }
-    
-    
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        view.addConstraints(
-            [NSLayoutConstraint(item: bannerView,
-                                attribute: .bottom,
-                                relatedBy: .equal,
-                                toItem: bottomLayoutGuide,
-                                attribute: .top,
-                                multiplier: 1,
-                                constant: 0),
-             NSLayoutConstraint(item: bannerView,
-                                attribute: .centerX,
-                                relatedBy: .equal,
-                                toItem: view,
-                                attribute: .centerX,
-                                multiplier: 1,
-                                constant: 0)
-            ])
-    }
-    func createAdd() {
-        let request = GADRequest()
-        interstitial?.fullScreenContentDelegate = self
-        GADInterstitialAd.load(withAdUnitID:Utils.fullScreenAdId,
-                               request: request,
-                               completionHandler: { [self] ad, error in
-            if let error = error {
-                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                return
-            }
-            interstitial = ad
-        }
-        )
-    }
-    
-    func interstitialWillDismissScreen(_ ad: GADInterstitialAd) {
-        print("interstitialWillDismissScreen")
-    }
+   
+  
     func networkService (){
         var flag = false
         
@@ -171,11 +171,11 @@ class AdhanViewController: UIViewController, GADBannerViewDelegate, GADFullScree
         sunsetTime.text = namaz.data.timings.Sunset
         
         fajrLbl.text = "İmsak"
-        sunsetLbl.text = "Güneş"
+        sunsetLbl.text = "Akşam"
         asrLbl.text = "Öğle"
         dhuhrLbl.text = "İkindi"
-        ishaLbl.text = "Akşam"
-        sunriseLbl.text = "Yatsı"
+        ishaLbl.text = "Yatsı"
+        sunriseLbl.text = "Güneş"
     }
     func calculateCurrentAdhanTime (namaz: Response){
         let fajrTimer = createAdhanTime(time: namaz.data.timings.Fajr )
@@ -320,4 +320,97 @@ class AdhanViewController: UIViewController, GADBannerViewDelegate, GADFullScree
      }
      */
     
+}
+extension AdhanViewController: SKProductsRequestDelegate, SKPaymentTransactionObserver{
+    
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        print(response.products.first)
+        if let oproduct = response.products.first{
+            
+            self.purchase(aproduct: oproduct)
+        }
+    }
+    
+    func purchase ( aproduct: SKProduct){
+        let payment = SKPayment(product: aproduct)
+        SKPaymentQueue.default().add(self)
+        SKPaymentQueue.default().add(payment)
+        
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction in transactions {
+            switch transaction.transactionState{
+            case .purchasing:
+                print("pur")
+            case .purchased:
+                SKPaymentQueue.default().finishTransaction(transaction)
+                Utils.saveLocal(array: "premium", key: "purchase")
+                Utils.isPremium = "premium"
+
+            case .failed:
+                SKPaymentQueue.default().finishTransaction(transaction)
+            case .restored:
+                Utils.saveLocal(array: "premium", key: "purchase")
+                Utils.isPremium = "premium"
+
+                print("restore")
+            case .deferred:
+                print("deffered")
+            default: break
+            }
+            
+        }
+    }
+    
+    func fetchProducts(){
+        let request = SKProductsRequest(productIdentifiers: Set(Products.allCases.compactMap({$0.rawValue})))
+        request.delegate = self
+        request.start()
+    }
+    
+}
+extension AdhanViewController: GADBannerViewDelegate, GADFullScreenContentDelegate{
+    func createAdd() {
+        let request = GADRequest()
+        interstitial?.fullScreenContentDelegate = self
+        GADInterstitialAd.load(withAdUnitID:Utils.fullScreenAdId,
+                               request: request,
+                               completionHandler: { [self] ad, error in
+            if let error = error {
+                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                return
+            }
+            interstitial = ad
+        }
+        )
+    }
+    func interstitialWillDismissScreen(_ ad: GADInterstitialAd) {
+        print("interstitialWillDismissScreen")
+    }
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+        // Add banner to view and add constraints as above.
+        addBannerViewToView(bannerView)
+    }
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+            [NSLayoutConstraint(item: bannerView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: bottomLayoutGuide,
+                                attribute: .top,
+                                multiplier: 1,
+                                constant: 0),
+             NSLayoutConstraint(item: bannerView,
+                                attribute: .centerX,
+                                relatedBy: .equal,
+                                toItem: view,
+                                attribute: .centerX,
+                                multiplier: 1,
+                                constant: 0)
+            ])
+    }
 }

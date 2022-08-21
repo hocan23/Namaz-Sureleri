@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import StoreKit
+import GoogleMobileAds
 
 class OtherAppsViewController: UIViewController {
 
     
+    @IBOutlet weak var backHeightCons: NSLayoutConstraint!
+    @IBOutlet weak var backWidthCons: NSLayoutConstraint!
     @IBOutlet weak var bottomRightText: UILabel!
     @IBOutlet weak var bottomLeftText: UILabel!
     @IBOutlet weak var midRightText: UILabel!
@@ -31,12 +35,41 @@ class OtherAppsViewController: UIViewController {
     @IBOutlet weak var topRightView: UIView!
     @IBOutlet weak var middleRightView: UIView!
     @IBOutlet weak var bottomRightView: UIView!
+    
+    var isAd = false
+    var models = [SKProduct]()
+    enum Products : String,CaseIterable{
+        case removeAds = "com.SIX11.elifba.remove"
+    }
+    var bannerView: GADBannerView!
+    private var interstitial: GADInterstitialAd?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUi()
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if isAd == true {
+            self.dismiss(animated: true)
+            
+        }
+        
+        if Utils.isPremium == "premium"{
+            removeView.isHidden = true
+        }else{
+            createAdd()
+            removeView.isHidden = false
+            bannerView = GADBannerView(adSize: GADAdSizeBanner)
+            bannerView.adUnitID = Utils.bannerId
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
+            bannerView.delegate = self
+        
+    }
+    }
     func setupUi(){
         topLeftLeadingConstant.constant = view.frame.width*0.06
         topRightTrailingConstant.constant = view.frame.width*0.06
@@ -65,12 +98,12 @@ class OtherAppsViewController: UIViewController {
         bottomLeftView.layer.cornerRadius = 20
         bottomRightView.layer.cornerRadius = 20
         
-        topLeftText.font = topLeftText.font!.withSize(UIScreen.main.bounds.size.height*0.014)
-        topRightText.font = topRightText.font!.withSize(UIScreen.main.bounds.size.height*0.015)
-        midLefText.font = midLefText.font!.withSize(UIScreen.main.bounds.size.height*0.015)
-        midRightText.font = midRightText.font!.withSize(UIScreen.main.bounds.size.height*0.015)
-        bottomLeftText.font = bottomLeftText.font!.withSize(UIScreen.main.bounds.size.height*0.015)
-        bottomRightText.font = bottomRightText.font!.withSize(UIScreen.main.bounds.size.height*0.015)
+        topLeftText.font = topLeftText.font!.withSize(UIScreen.main.bounds.size.height*0.016)
+        topRightText.font = topRightText.font!.withSize(UIScreen.main.bounds.size.height*0.016)
+        midLefText.font = midLefText.font!.withSize(UIScreen.main.bounds.size.height*0.016)
+        midRightText.font = midRightText.font!.withSize(UIScreen.main.bounds.size.height*0.016)
+        bottomLeftText.font = bottomLeftText.font!.withSize(UIScreen.main.bounds.size.height*0.016)
+        bottomRightText.font = bottomRightText.font!.withSize(UIScreen.main.bounds.size.height*0.016)
         arrangeShadowforViews(vieww: topLeftView)
         arrangeShadowforViews(vieww: topRightView)
         arrangeShadowforViews(vieww: midLeftView)
@@ -78,6 +111,11 @@ class OtherAppsViewController: UIViewController {
         arrangeShadowforViews(vieww: bottomLeftView)
         arrangeShadowforViews(vieww: bottomRightView)
 
+        if UIDevice.current.userInterfaceIdiom == .pad  {
+            backHeightCons.constant = 60
+            backWidthCons.constant = 60
+        }
+        
     }
     func arrangeShadowforViews (vieww:UIView){
         vieww.layer.cornerRadius = 20
@@ -87,6 +125,17 @@ class OtherAppsViewController: UIViewController {
         vieww.layer.shadowRadius = 10
         vieww.layer.shadowOpacity = 1
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        get {
+            return .portrait
+
+        }
+    }
+    
     @objc func topLeftViewTapped(){
         
     }
@@ -106,9 +155,114 @@ class OtherAppsViewController: UIViewController {
         
     }
     @objc func removeViewTapped(){
-        
+        if SKPaymentQueue.canMakePayments(){
+            let set :  Set<String> = [Products.removeAds.rawValue]
+            let productRequest = SKProductsRequest(productIdentifiers: set)
+            productRequest.delegate = self
+            productRequest.start()
+            
+        }
     }
     @objc func backViewTapped(){
-        dismiss(animated: true)
+        if interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+            isAd = true
+        } else {
+            print("Ad wasn't ready")
+            self.dismiss(animated: true)
+        }
+    }
+}
+extension OtherAppsViewController: SKProductsRequestDelegate, SKPaymentTransactionObserver{
+    
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        print(response.products.first)
+        if let oproduct = response.products.first{
+            
+            self.purchase(aproduct: oproduct)
+        }
+    }
+    
+    func purchase ( aproduct: SKProduct){
+        let payment = SKPayment(product: aproduct)
+        SKPaymentQueue.default().add(self)
+        SKPaymentQueue.default().add(payment)
+        
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction in transactions {
+            switch transaction.transactionState{
+            case .purchasing:
+                print("pur")
+            case .purchased:
+                SKPaymentQueue.default().finishTransaction(transaction)
+                Utils.saveLocal(array: "premium", key: "purchase")
+                Utils.isPremium = "premium"
+
+            case .failed:
+                SKPaymentQueue.default().finishTransaction(transaction)
+            case .restored:
+                Utils.saveLocal(array: "premium", key: "purchase")
+                Utils.isPremium = "premium"
+
+                print("restore")
+            case .deferred:
+                print("deffered")
+            default: break
+            }
+            
+        }
+    }
+    
+    func fetchProducts(){
+        let request = SKProductsRequest(productIdentifiers: Set(Products.allCases.compactMap({$0.rawValue})))
+        request.delegate = self
+        request.start()
+    }
+    
+}
+extension OtherAppsViewController: GADBannerViewDelegate, GADFullScreenContentDelegate{
+    func createAdd() {
+        let request = GADRequest()
+        interstitial?.fullScreenContentDelegate = self
+        GADInterstitialAd.load(withAdUnitID:Utils.fullScreenAdId,
+                               request: request,
+                               completionHandler: { [self] ad, error in
+            if let error = error {
+                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                return
+            }
+            interstitial = ad
+        }
+        )
+    }
+    func interstitialWillDismissScreen(_ ad: GADInterstitialAd) {
+        print("interstitialWillDismissScreen")
+    }
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+        // Add banner to view and add constraints as above.
+        addBannerViewToView(bannerView)
+    }
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+            [NSLayoutConstraint(item: bannerView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: bottomLayoutGuide,
+                                attribute: .top,
+                                multiplier: 1,
+                                constant: 0),
+             NSLayoutConstraint(item: bannerView,
+                                attribute: .centerX,
+                                relatedBy: .equal,
+                                toItem: view,
+                                attribute: .centerX,
+                                multiplier: 1,
+                                constant: 0)
+            ])
     }
 }

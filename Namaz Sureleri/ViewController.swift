@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import StoreKit
+import GoogleMobileAds
 
 class ViewController: UIViewController {
     @IBOutlet weak var topRightTrailingConstant: NSLayoutConstraint!
@@ -44,6 +46,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var forthLeftView: UIView!
     @IBOutlet weak var thirdLeftView: UIView!
     @IBOutlet weak var secondLeftView: UIView!
+    var isAd = false
+
+    var models = [SKProduct]()
+    enum Products : String,CaseIterable{
+        case removeAds = "com.temporary.id"
+    }
+    var bannerView: GADBannerView!
+    private var interstitial: GADInterstitialAd?
+    
     
     @IBOutlet weak var topHeightProportionConstant: NSLayoutConstraint!
     override func viewDidLoad() {
@@ -51,11 +62,12 @@ class ViewController: UIViewController {
         setupUi()
     }
     func setupUi(){
-        topLeftLeadingConstant.constant = view.frame.width*0.1
-        topRightTrailingConstant.constant = view.frame.width*0.1
-        OneTwoLineConstant.constant = view.frame.height*0.02
-        twoThreeLineConstant.constant = view.frame.height*0.02
-        threeFourLineCONSTANT.constant = view.frame.height*0.02
+        Utils.isPremium = Utils.readLocal(key: "purchase")
+        topLeftLeadingConstant.constant = view.frame.width*0.05
+        topRightTrailingConstant.constant = view.frame.width*0.05
+        OneTwoLineConstant.constant = view.frame.height*0.011
+        twoThreeLineConstant.constant = view.frame.height*0.011
+        threeFourLineCONSTANT.constant = view.frame.height*0.011
 //        removeView.layer.cornerRadius = removeView.frame.height*0.5
         topLeftView.isUserInteractionEnabled = true
         topLeftView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(topLeftViewTapped)))
@@ -102,6 +114,37 @@ class ViewController: UIViewController {
 
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if Utils.isPremium == "premium"{
+            removeView.isHidden = true
+        }else{
+            createAdd()
+            removeView.isHidden = false
+            bannerView = GADBannerView(adSize: GADAdSizeBanner)
+            bannerView.adUnitID = Utils.bannerId
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
+            bannerView.delegate = self
+        
+                DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+            
+                if Utils.isFirstOpen == true{
+                    if self.interstitial != nil {
+                        self.interstitial?.present(fromRootViewController: self)
+                        self.isAd = true
+                        Utils.isFirstOpen = false
+                    } else {
+                        print("Ad wasn't ready")
+                    }
+                }
+                }
+            
+        }
+    }
+    
+    
+    
     func arrangeShadowforViews (vieww:UIView){
         vieww.layer.cornerRadius = 20
         vieww.layer.masksToBounds = false
@@ -110,6 +153,17 @@ class ViewController: UIViewController {
         vieww.layer.shadowRadius = 10
         vieww.layer.shadowOpacity = 1
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        get {
+            return .portrait
+
+        }
+    }
+    
     @objc func topLeftViewTapped(){
         let destinationVC = storyboard?.instantiateViewController(withIdentifier: "NamazViewController") as! NamazViewController
         destinationVC.modalPresentationStyle = .fullScreen
@@ -154,8 +208,107 @@ class ViewController: UIViewController {
         
     }
     @objc func removeViewTapped(){
-        
+        if SKPaymentQueue.canMakePayments(){
+            let set :  Set<String> = [Products.removeAds.rawValue]
+            let productRequest = SKProductsRequest(productIdentifiers: set)
+            productRequest.delegate = self
+            productRequest.start()
+            
+        }
     }
     
 }
 
+extension ViewController: SKProductsRequestDelegate, SKPaymentTransactionObserver{
+    
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        print(response.products.first)
+        if let oproduct = response.products.first{
+            
+            self.purchase(aproduct: oproduct)
+        }
+    }
+    
+    func purchase ( aproduct: SKProduct){
+        let payment = SKPayment(product: aproduct)
+        SKPaymentQueue.default().add(self)
+        SKPaymentQueue.default().add(payment)
+        
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction in transactions {
+            switch transaction.transactionState{
+            case .purchasing:
+                print("pur")
+            case .purchased:
+                SKPaymentQueue.default().finishTransaction(transaction)
+                Utils.saveLocal(array: "premium", key: "purchase")
+                Utils.isPremium = "premium"
+
+            case .failed:
+                SKPaymentQueue.default().finishTransaction(transaction)
+            case .restored:
+                Utils.saveLocal(array: "premium", key: "purchase")
+                Utils.isPremium = "premium"
+
+                print("restore")
+            case .deferred:
+                print("deffered")
+            default: break
+            }
+            
+        }
+    }
+    
+    func fetchProducts(){
+        let request = SKProductsRequest(productIdentifiers: Set(Products.allCases.compactMap({$0.rawValue})))
+        request.delegate = self
+        request.start()
+    }
+    
+}
+extension ViewController: GADBannerViewDelegate, GADFullScreenContentDelegate{
+    func createAdd() {
+        let request = GADRequest()
+        interstitial?.fullScreenContentDelegate = self
+        GADInterstitialAd.load(withAdUnitID:Utils.fullScreenAdId,
+                               request: request,
+                               completionHandler: { [self] ad, error in
+            if let error = error {
+                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                return
+            }
+            interstitial = ad
+        }
+        )
+    }
+    func interstitialWillDismissScreen(_ ad: GADInterstitialAd) {
+        print("interstitialWillDismissScreen")
+    }
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+        // Add banner to view and add constraints as above.
+        addBannerViewToView(bannerView)
+    }
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+            [NSLayoutConstraint(item: bannerView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: bottomLayoutGuide,
+                                attribute: .top,
+                                multiplier: 1,
+                                constant: 0),
+             NSLayoutConstraint(item: bannerView,
+                                attribute: .centerX,
+                                relatedBy: .equal,
+                                toItem: view,
+                                attribute: .centerX,
+                                multiplier: 1,
+                                constant: 0)
+            ])
+    }
+}

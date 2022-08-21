@@ -11,9 +11,13 @@ import CoreLocation
 import Lottie
 
 class Utils{
-    static var fullScreenAdId = "ca-app-pub-1501030234998564/7610227"
-    static var  bannerId = "ca-app-pub-1501030234998564/536720763"
+    static var fullScreenAdId = "ca-app-pub-3940256099942544/4411468910"
+    static var  bannerId = "ca-app-pub-3940256099942544/2934735716"
     static var isPremium : String?
+    static var isFirstOpen = true
+    
+    
+    
     static var abdestText = ["Önce \"Niyet ettim Allah rızası için abdest almaya\" diye niyet ederiz.Önce eller bileklere kadar ve parmak araları da ovuşturularak üç defa yıkanır.","Sağ elimize üç defa su alarak ağzımıza veririz. Her su alışta ağzımızı çalkalayarak ağızdaki suyu dökeriz. Tekrar avucumuza su alarak üç defa burnumuza veririz. Sol el ile de sümkürür temizleriz.","Sonra iki avucumuza su alarak saç bitiminden çene altına kadar yüzümüzü üç defa yıkarız.","Önce sağ kolu dirsekle beraber üçer defa yıkarız.Sonra sol kolu dirsekle beraber üçer defa yıkarız.","Sağ elimizle başımızın dörtte birini mesh ederiz. Yani sağ elimizi ıslatıp başın dörtte birini sıvazlayarak ıslatırız.","Her iki eli de ıslatıp serçe parmaklarımızla kulaklarımızın içini mesh ederiz. Kulakların arka kısmını ise baş parmaklarımızla mesh ederiz.Sonra orta ve yüzük parmaklarımızın dışı ile boynumuzu da mesh ederiz.","Ayaklara gelince, parmaklardan başlayarak önce sağ sonra sol ayağımızı topuk kemiği ile beraber üçer kez yıkarız.Ayaklarımızı yıkarken parmak aralarımızın iyice yıkanmasına dikkat etmemiz gerekir."]
     
     static var namazText = ["Anlatım sabah namazı üzerinden yapılacaktır ancak vakit ve rekat sayıları değişsede namaz kılış şekli aynıdır.Önce \"Niyet ettim Allah rızası için sabah namazının iki rekat sünnetini kılmaya\" diye niyet ederiz. \"Allahu Ekber\" diyerek tekbirle namaza başlarız.","Eller bağlandıktan sonra Sübhaneke'yi okuruz.Sonra Eûzu Besmele çekip: \"Eûzubillahimineşşeytanirracim, Bismillahirrahmanirrahim\" Fatiha Suresi'ni okuruz ve \"Amin\" deriz.Ardından namaz surelerinden birini okuruz","Sonra \"Allahu Ekber\" diyerek rükûya gideriz. Rükûda üç defa \"Sübhâne Râbbiye'l-Azim\" dedikten sonra doğruluruz.","Doğrulurken \"Semi Allahu li-men hamideh\" deriz. Tam doğrulunca da \"Rabbenâ leke'l hamd\" dedikten sonra...","\"Allahu Ekber\" deyip secdeye gideriz. Secdede üç defa: \"Sübhâne rabbiyel-a 'lâ\" deriz.","\"Allahu Ekber\" diyerek otururuz. Tekrar....","\"Allahu Ekber\" deyip secdeye gideriz. Secdede üç defa: \"Sübhâne rabbiyel-a 'lâ\" deriz.","\"Allahu Ekber\" deyip: \"Tahiyyata otururuz. Oturduktan sonra Ettehiyyâtü, Allâhumme Salli, Allâhumme Bârik ve Rabbenâ dualarını okuruz.","Dualar bitince yüzümüzü önce sağ tarafa çevirerek \"Es selâmu aleyküm ve rahmet'ullah\" diyerek selam veririz.","Sonra sola çevirip yine \"Es selâmu aleyküm ve rahmet'ullah\" diyerek selam veririz.Böylece Sabah namazının iki rekatlık farzi sona ermiş olur."]

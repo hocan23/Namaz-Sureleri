@@ -12,8 +12,16 @@ import GoogleMobileAds
 
 
 class SettingsViewController: UIViewController{
+    
+    
+    @IBOutlet weak var backHeightCons: NSLayoutConstraint!
+    @IBOutlet weak var backWidthCons: NSLayoutConstraint!
+    
+    
+    
     @IBOutlet weak var homeView: UIImageView!
     var headers = ["Share App","Other Apps",  "Rate App",  "Remove Ads - $0.99",  "Restore Purchase"]
+    var isAd = false
     var models = [SKProduct]()
     enum Products : String,CaseIterable{
         case removeAds = "com.SIX11.elifba.remove"
@@ -30,14 +38,22 @@ class SettingsViewController: UIViewController{
         homeView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(exitTapped)))
         SKPaymentQueue.default().add(self)
         tableView.isScrollEnabled = false
-       
+        tableView.layer.cornerRadius = 20
+       arrangeShadowforViews(vieww: tableView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         view.overrideUserInterfaceStyle = .light
-
+        if isAd == true {
+            self.dismiss(animated: true)
+            
+        }
+        
         if Utils.isPremium == "premium"{
+//            removeView.isHidden = true
         }else{
+            createAdd()
+//            removeView.isHidden = false
             bannerView = GADBannerView(adSize: GADAdSizeBanner)
             bannerView.adUnitID = Utils.bannerId
             bannerView.rootViewController = self
@@ -45,6 +61,14 @@ class SettingsViewController: UIViewController{
             bannerView.delegate = self
         
     }
+    }
+    func arrangeShadowforViews (vieww:UIView){
+        vieww.layer.cornerRadius = 20
+        vieww.layer.masksToBounds = false
+        vieww.layer.shadowColor = UIColor(red: 35/255, green: 75/255, blue: 113/255, alpha: 0.1).cgColor
+        vieww.layer.shadowOffset = CGSize(width: 0, height: 5)
+        vieww.layer.shadowRadius = 10
+        vieww.layer.shadowOpacity = 1
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -61,19 +85,22 @@ class SettingsViewController: UIViewController{
         homeView.anchor(top:view.topAnchor, bottom: nil, leading: view.leadingAnchor, trailing: nil, paddingTop: view.frame.height*0.07, paddingBottom: 0, paddingLeft: view.frame.height*0.04, paddingRight: 0, width: view.frame.height*0.05, height: view.frame.height*0.05)
         tableView.anchor(top: homeView.bottomAnchor, bottom: nil, leading: view.leadingAnchor, trailing: view.trailingAnchor, paddingTop: 30, paddingBottom: 0, paddingLeft: 20, paddingRight: -20, width: 0, height: 250)
         tableView.layer.cornerRadius = 20
+        
+        if UIDevice.current.userInterfaceIdiom == .pad  {
+            backHeightCons.constant = 60
+            backWidthCons.constant = 60
+        }
     }
     @objc func exitTapped (){
         homeView.zoomIn()
-        self.dismiss(animated: true)
-        
-        //        if interstitial != nil {
-        //            interstitial?.present(fromRootViewController: self)
-        //            isAd = true
-        //        } else {
-        //            print("Ad wasn't ready")
-        //            self.dismiss(animated: true)
-        //        }
-        //
+        if interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+            isAd = true
+            
+        } else {
+            print("Ad wasn't ready")
+            self.dismiss(animated: true)
+        }
     }
     
 }

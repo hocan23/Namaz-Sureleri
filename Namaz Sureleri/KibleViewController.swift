@@ -39,7 +39,7 @@ class KibleViewController: UIViewController,GADBannerViewDelegate, GADFullScreen
     @IBOutlet weak var kibleView: UIImageView!
     var models = [SKProduct]()
     enum Products : String,CaseIterable{
-        case removeAds = "com.SIX11.elifba.remove"
+        case removeAds = "com.SIX11.namazRehberiRemoveAds"
     }
     var isAd : Bool = false
 

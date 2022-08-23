@@ -50,7 +50,7 @@ class ViewController: UIViewController {
 
     var models = [SKProduct]()
     enum Products : String,CaseIterable{
-        case removeAds = "com.temporary.id"
+        case removeAds = "com.SIX11.namazRehberiRemoveAds"
     }
     var bannerView: GADBannerView!
     private var interstitial: GADInterstitialAd?
@@ -62,6 +62,7 @@ class ViewController: UIViewController {
         setupUi()
     }
     func setupUi(){
+        Utils.addSure()
         Utils.isPremium = Utils.readLocal(key: "purchase")
         topLeftLeadingConstant.constant = view.frame.width*0.05
         topRightTrailingConstant.constant = view.frame.width*0.05
@@ -184,6 +185,9 @@ class ViewController: UIViewController {
         
     }
     @objc func secondLeftViewTapped(){
+        let destinationVC = storyboard?.instantiateViewController(withIdentifier: "SureViewController") as! SureViewController
+        destinationVC.modalPresentationStyle = .fullScreen
+        self.present(destinationVC, animated: true, completion: nil)
         
     }
     @objc func thirdLeftViewTapped(){

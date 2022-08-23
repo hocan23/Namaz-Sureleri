@@ -39,7 +39,7 @@ class OtherAppsViewController: UIViewController {
     var isAd = false
     var models = [SKProduct]()
     enum Products : String,CaseIterable{
-        case removeAds = "com.SIX11.elifba.remove"
+        case removeAds = "com.SIX11.namazRehberiRemoveAds"
     }
     var bannerView: GADBannerView!
     private var interstitial: GADInterstitialAd?
@@ -137,22 +137,39 @@ class OtherAppsViewController: UIViewController {
     }
     
     @objc func topLeftViewTapped(){
-        
+        if let url = URL(string: "https://apps.apple.com/us/app/elif-ba-%C3%B6%C4%9Freniyorum-sesli/id1491565588?platform=iphone") {
+            UIApplication.shared.open(url)
+        }
+   
     }
     @objc func topRightViewTapped(){
-        
+        if let url = URL(string: " https://apps.apple.com/us/app/dhikr-tasbeeh-counter-app/id1639099844") {
+            UIApplication.shared.open(url)
+        }
     }
     @objc func midLeftViewTapped(){
-        
+        if let url = URL(string: "https://apps.apple.com/us/app/islamic-wallpaper-hd-pro/id1632238123") {
+            UIApplication.shared.open(url)
+        }
     }
     @objc func middleRightViewTapped(){
-        
+        if let url = URL(string: "https://apps.apple.com/us/app/listen-quran-turkish-ofline/id1450080130?platform=iphone") {
+            UIApplication.shared.open(url)
+        }
     }
     @objc func bottomRightViewTapped(){
-        
+        if let url = URL(string: "https://apps.apple.com/us/app/baby-sleep-sound-white-noise/id1638514663?platform=iphone") {
+            UIApplication.shared.open(url)
+        }
     }
     @objc func bottomLeftViewTapped(){
         
+        if let url = URL(string: "https://apps.apple.com/us/app/baby-sleep-sound-white-noise/id1638514663?platform=iphone") {
+            UIApplication.shared.open(url)
+        }
+        
+        
+       
     }
     @objc func removeViewTapped(){
         if SKPaymentQueue.canMakePayments(){

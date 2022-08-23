@@ -14,7 +14,7 @@ import StoreKit
 class AdhanViewController: UIViewController, CLLocationManagerDelegate {
     var models = [SKProduct]()
     enum Products : String,CaseIterable{
-        case removeAds = "com.SIX11.elifba.remove"
+        case removeAds = "com.SIX11.namazRehberiRemoveAds"
     }
     var bannerView: GADBannerView!
     private var interstitial: GADInterstitialAd?

@@ -24,7 +24,7 @@ class SettingsViewController: UIViewController{
     var isAd = false
     var models = [SKProduct]()
     enum Products : String,CaseIterable{
-        case removeAds = "com.SIX11.elifba.remove"
+        case removeAds = "com.SIX11.namazRehberiRemoveAds"
     }
     var bannerView: GADBannerView!
     private var interstitial: GADInterstitialAd?
@@ -129,19 +129,26 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 }
         switch indexPath.row{
         case 0 :
-            if let name = URL(string: "https://apps.apple.com/us/app/şarkılarla-elif-ba-öğreniyorum/id1491565588"), !name.absoluteString.isEmpty {
-                let objectsToShare = [name]
+            if let urlStr = NSURL(string: "https://apps.apple.com/tr/app/namaz-surelerini-%C3%B6%C4%9Freniyorum/id1491638476") {
+                let objectsToShare = [urlStr]
                 let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+
+                if UIDevice.current.userInterfaceIdiom == .pad {
+                    if let popup = activityVC.popoverPresentationController {
+                        popup.sourceView = self.view
+                        popup.sourceRect = CGRect(x: self.view.frame.size.width / 2, y: self.view.frame.size.height / 4, width: 0, height: 0)
+                    }
+                }
+
                 self.present(activityVC, animated: true, completion: nil)
-            } else {
-                // show alert for not available
             }
+
         case 1:
             if let url = URL(string: "https://apps.apple.com/tr/developer/mehmet-rasit-arisu/id1346135076?see-all=i-phonei-pad-apps") {
                 UIApplication.shared.open(url)
             }
         case 2:
-            if let url = URL(string: "https://apps.apple.com/us/app/şarkılarla-elif-ba-öğreniyorum/id1491565588") {
+            if let url = URL(string: "https://apps.apple.com/tr/app/namaz-surelerini-%C3%B6%C4%9Freniyorum/id1491638476") {
                 UIApplication.shared.open(url)
             }
         case 3:

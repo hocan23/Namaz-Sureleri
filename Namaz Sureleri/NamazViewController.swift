@@ -48,7 +48,7 @@ class NamazViewController: UIViewController {
 
     var models = [SKProduct]()
     enum Products : String,CaseIterable{
-        case removeAds = "com.SIX11.elifba.remove"
+        case removeAds = "com.SIX11.namazRehberiRemoveAds"
     }
     var bannerView: GADBannerView!
     private var interstitial: GADInterstitialAd?
@@ -56,6 +56,8 @@ class NamazViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUi()
+        namazTextView.isUserInteractionEnabled = false
+
         // Do any additional setup after loading the view.
     }
     
@@ -148,6 +150,15 @@ class NamazViewController: UIViewController {
             }
             
             if index == 11{
+                if interstitial != nil {
+                    interstitial?.present(fromRootViewController: self)
+                    isAd = true
+                } else {
+                    print("Ad wasn't ready")
+                    self.dismiss(animated: true)
+                }
+                
+            
                 let destinationVC = storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
                 destinationVC.modalPresentationStyle = .fullScreen
                 self.present(destinationVC, animated: true, completion: nil)
@@ -161,6 +172,15 @@ class NamazViewController: UIViewController {
                 afterButton.text = "Tamamla"
             }
             if index == 8{
+                if interstitial != nil {
+                    interstitial?.present(fromRootViewController: self)
+                    isAd = true
+                } else {
+                    print("Ad wasn't ready")
+                    self.dismiss(animated: true)
+                }
+                
+            
                 let destinationVC = storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
                 destinationVC.modalPresentationStyle = .fullScreen
                 self.present(destinationVC, animated: true, completion: nil)

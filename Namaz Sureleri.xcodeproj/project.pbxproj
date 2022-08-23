@@ -10,7 +10,29 @@
 		2D5D68FEA9114061335E2582 /* Pods_Namaz_Sureleri_Namaz_SureleriUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BFC363F3BB3BEB6322161B /* Pods_Namaz_Sureleri_Namaz_SureleriUITests.framework */; };
 		6559462F3AEDF9F3609C56E5 /* Pods_Namaz_Sureleri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A259C931BF161C32DC5F50D /* Pods_Namaz_Sureleri.framework */; };
 		A2887A7C7153247C47925FF6 /* Pods_Namaz_SureleriTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFC6B1B8BC230CCD1D39DBC /* Pods_Namaz_SureleriTests.framework */; };
+		B74DCE3928B525F5002D2D9F /* asr.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE2C28B525F5002D2D9F /* asr.mp3 */; };
+		B74DCE3A28B525F5002D2D9F /* ihlas.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE2D28B525F5002D2D9F /* ihlas.mp3 */; };
+		B74DCE3B28B525F5002D2D9F /* fil.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE2E28B525F5002D2D9F /* fil.mp3 */; };
+		B74DCE3C28B525F5002D2D9F /* yasin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE2F28B525F5002D2D9F /* yasin.mp3 */; };
+		B74DCE3D28B525F5002D2D9F /* maun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE3028B525F5002D2D9F /* maun.mp3 */; };
+		B74DCE3E28B525F5002D2D9F /* fatiha.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE3128B525F5002D2D9F /* fatiha.mp3 */; };
+		B74DCE3F28B525F5002D2D9F /* tebbet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE3228B525F5002D2D9F /* tebbet.mp3 */; };
+		B74DCE4028B525F5002D2D9F /* kurayş.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE3328B525F5002D2D9F /* kurayş.mp3 */; };
+		B74DCE4128B525F5002D2D9F /* nasr.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE3428B525F5002D2D9F /* nasr.mp3 */; };
+		B74DCE4228B525F5002D2D9F /* kafirun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE3528B525F5002D2D9F /* kafirun.mp3 */; };
+		B74DCE4328B525F5002D2D9F /* kevser.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE3628B525F5002D2D9F /* kevser.mp3 */; };
+		B74DCE4428B525F5002D2D9F /* nas.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE3728B525F5002D2D9F /* nas.mp3 */; };
+		B74DCE4528B525F5002D2D9F /* felak.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE3828B525F5002D2D9F /* felak.mp3 */; };
+		B74DCE4D28B53486002D2D9F /* Allahümme Salli Duası.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE4728B53486002D2D9F /* Allahümme Salli Duası.mp3 */; };
+		B74DCE4E28B53486002D2D9F /* Ettehiyyatü Duası.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE4828B53486002D2D9F /* Ettehiyyatü Duası.mp3 */; };
+		B74DCE4F28B53486002D2D9F /* Allahumme Barik Duası.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE4928B53486002D2D9F /* Allahumme Barik Duası.mp3 */; };
+		B74DCE5028B53486002D2D9F /* Kunut Duaları.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE4A28B53486002D2D9F /* Kunut Duaları.mp3 */; };
+		B74DCE5128B53486002D2D9F /* Rabbenâ Duaları.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE4B28B53486002D2D9F /* Rabbenâ Duaları.mp3 */; };
+		B74DCE5228B53486002D2D9F /* Sübhaneke Duası.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B74DCE4C28B53486002D2D9F /* Sübhaneke Duası.mp3 */; };
 		B773E22D28B2B9D300F4A069 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B773E22C28B2B9D300F4A069 /* StoreKit.framework */; };
+		B773E23028B4289900F4A069 /* SureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B773E22F28B4289900F4A069 /* SureViewController.swift */; };
+		B773E23228B4297800F4A069 /* SureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B773E23128B4297800F4A069 /* SureTableViewCell.swift */; };
+		B773E23428B430EE00F4A069 /* SureDetayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B773E23328B430EE00F4A069 /* SureDetayViewController.swift */; };
 		B774E00328B1427900BAB3F3 /* NamazViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E00228B1427900BAB3F3 /* NamazViewController.swift */; };
 		B774E00528B1455A00BAB3F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E00428B1455A00BAB3F3 /* Extensions.swift */; };
 		B774E00728B1543B00BAB3F3 /* OtherAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E00628B1543B00BAB3F3 /* OtherAppsViewController.swift */; };
@@ -60,8 +82,30 @@
 		72B39510B41E33AE60B19B99 /* Pods-Namaz Sureleri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Namaz Sureleri.release.xcconfig"; path = "Target Support Files/Pods-Namaz Sureleri/Pods-Namaz Sureleri.release.xcconfig"; sourceTree = "<group>"; };
 		7D02D1BF48F56A0264F57BE3 /* Pods-Namaz Sureleri-Namaz SureleriUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Namaz Sureleri-Namaz SureleriUITests.debug.xcconfig"; path = "Target Support Files/Pods-Namaz Sureleri-Namaz SureleriUITests/Pods-Namaz Sureleri-Namaz SureleriUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DFC6B1B8BC230CCD1D39DBC /* Pods_Namaz_SureleriTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Namaz_SureleriTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B74DCE2C28B525F5002D2D9F /* asr.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = asr.mp3; sourceTree = "<group>"; };
+		B74DCE2D28B525F5002D2D9F /* ihlas.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ihlas.mp3; sourceTree = "<group>"; };
+		B74DCE2E28B525F5002D2D9F /* fil.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fil.mp3; sourceTree = "<group>"; };
+		B74DCE2F28B525F5002D2D9F /* yasin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yasin.mp3; sourceTree = "<group>"; };
+		B74DCE3028B525F5002D2D9F /* maun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = maun.mp3; sourceTree = "<group>"; };
+		B74DCE3128B525F5002D2D9F /* fatiha.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fatiha.mp3; sourceTree = "<group>"; };
+		B74DCE3228B525F5002D2D9F /* tebbet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tebbet.mp3; sourceTree = "<group>"; };
+		B74DCE3328B525F5002D2D9F /* kurayş.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "kurayş.mp3"; sourceTree = "<group>"; };
+		B74DCE3428B525F5002D2D9F /* nasr.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nasr.mp3; sourceTree = "<group>"; };
+		B74DCE3528B525F5002D2D9F /* kafirun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kafirun.mp3; sourceTree = "<group>"; };
+		B74DCE3628B525F5002D2D9F /* kevser.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kevser.mp3; sourceTree = "<group>"; };
+		B74DCE3728B525F5002D2D9F /* nas.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nas.mp3; sourceTree = "<group>"; };
+		B74DCE3828B525F5002D2D9F /* felak.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = felak.mp3; sourceTree = "<group>"; };
+		B74DCE4728B53486002D2D9F /* Allahümme Salli Duası.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Allahümme Salli Duası.mp3"; sourceTree = "<group>"; };
+		B74DCE4828B53486002D2D9F /* Ettehiyyatü Duası.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ettehiyyatü Duası.mp3"; sourceTree = "<group>"; };
+		B74DCE4928B53486002D2D9F /* Allahumme Barik Duası.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Allahumme Barik Duası.mp3"; sourceTree = "<group>"; };
+		B74DCE4A28B53486002D2D9F /* Kunut Duaları.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Kunut Duaları.mp3"; sourceTree = "<group>"; };
+		B74DCE4B28B53486002D2D9F /* Rabbenâ Duaları.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Rabbenâ Duaları.mp3"; sourceTree = "<group>"; };
+		B74DCE4C28B53486002D2D9F /* Sübhaneke Duası.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Sübhaneke Duası.mp3"; sourceTree = "<group>"; };
 		B773E22C28B2B9D300F4A069 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		B773E22E28B2BA5C00F4A069 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		B773E22F28B4289900F4A069 /* SureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SureViewController.swift; sourceTree = "<group>"; };
+		B773E23128B4297800F4A069 /* SureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SureTableViewCell.swift; sourceTree = "<group>"; };
+		B773E23328B430EE00F4A069 /* SureDetayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SureDetayViewController.swift; sourceTree = "<group>"; };
 		B774E00228B1427900BAB3F3 /* NamazViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamazViewController.swift; sourceTree = "<group>"; };
 		B774E00428B1455A00BAB3F3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B774E00628B1543B00BAB3F3 /* OtherAppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherAppsViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +191,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B74DCE2B28B525F5002D2D9F /* Sureler */ = {
+			isa = PBXGroup;
+			children = (
+				B74DCE2C28B525F5002D2D9F /* asr.mp3 */,
+				B74DCE2D28B525F5002D2D9F /* ihlas.mp3 */,
+				B74DCE2E28B525F5002D2D9F /* fil.mp3 */,
+				B74DCE2F28B525F5002D2D9F /* yasin.mp3 */,
+				B74DCE3028B525F5002D2D9F /* maun.mp3 */,
+				B74DCE3128B525F5002D2D9F /* fatiha.mp3 */,
+				B74DCE3228B525F5002D2D9F /* tebbet.mp3 */,
+				B74DCE3328B525F5002D2D9F /* kurayş.mp3 */,
+				B74DCE3428B525F5002D2D9F /* nasr.mp3 */,
+				B74DCE3528B525F5002D2D9F /* kafirun.mp3 */,
+				B74DCE3628B525F5002D2D9F /* kevser.mp3 */,
+				B74DCE3728B525F5002D2D9F /* nas.mp3 */,
+				B74DCE3828B525F5002D2D9F /* felak.mp3 */,
+			);
+			path = Sureler;
+			sourceTree = "<group>";
+		};
+		B74DCE4628B53486002D2D9F /* Dualar */ = {
+			isa = PBXGroup;
+			children = (
+				B74DCE4728B53486002D2D9F /* Allahümme Salli Duası.mp3 */,
+				B74DCE4828B53486002D2D9F /* Ettehiyyatü Duası.mp3 */,
+				B74DCE4928B53486002D2D9F /* Allahumme Barik Duası.mp3 */,
+				B74DCE4A28B53486002D2D9F /* Kunut Duaları.mp3 */,
+				B74DCE4B28B53486002D2D9F /* Rabbenâ Duaları.mp3 */,
+				B74DCE4C28B53486002D2D9F /* Sübhaneke Duası.mp3 */,
+			);
+			path = Dualar;
+			sourceTree = "<group>";
+		};
 		B774E00828B161E700BAB3F3 /* Hadis */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,9 +283,14 @@
 				B774E00628B1543B00BAB3F3 /* OtherAppsViewController.swift */,
 				B773E22E28B2BA5C00F4A069 /* Configuration.storekit */,
 				B774E01228B166FC00BAB3F3 /* KibleViewController.swift */,
+				B773E22F28B4289900F4A069 /* SureViewController.swift */,
+				B773E23328B430EE00F4A069 /* SureDetayViewController.swift */,
+				B74DCE4628B53486002D2D9F /* Dualar */,
+				B773E23128B4297800F4A069 /* SureTableViewCell.swift */,
 				B774E01428B17AB000BAB3F3 /* LoadingViewController.swift */,
 				B774E01828B17BE500BAB3F3 /* download.json */,
 				B774E01628B17BC900BAB3F3 /* prayer.json */,
+				B74DCE2B28B525F5002D2D9F /* Sureler */,
 				B774E00428B1455A00BAB3F3 /* Extensions.swift */,
 				B791AF9F28B0CA5800BCDF29 /* Main.storyboard */,
 				B774E01A28B17C6C00BAB3F3 /* Settings */,
@@ -348,12 +430,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B74DCE5028B53486002D2D9F /* Kunut Duaları.mp3 in Resources */,
+				B74DCE4E28B53486002D2D9F /* Ettehiyyatü Duası.mp3 in Resources */,
+				B74DCE3C28B525F5002D2D9F /* yasin.mp3 in Resources */,
+				B74DCE3B28B525F5002D2D9F /* fil.mp3 in Resources */,
+				B74DCE4528B525F5002D2D9F /* felak.mp3 in Resources */,
 				B791AFA928B0CA5900BCDF29 /* LaunchScreen.storyboard in Resources */,
 				B791AFA628B0CA5900BCDF29 /* Assets.xcassets in Resources */,
+				B74DCE4D28B53486002D2D9F /* Allahümme Salli Duası.mp3 in Resources */,
+				B74DCE4028B525F5002D2D9F /* kurayş.mp3 in Resources */,
+				B74DCE4428B525F5002D2D9F /* nas.mp3 in Resources */,
+				B74DCE4228B525F5002D2D9F /* kafirun.mp3 in Resources */,
+				B74DCE5228B53486002D2D9F /* Sübhaneke Duası.mp3 in Resources */,
+				B74DCE4328B525F5002D2D9F /* kevser.mp3 in Resources */,
+				B74DCE3F28B525F5002D2D9F /* tebbet.mp3 in Resources */,
 				B774E01728B17BCA00BAB3F3 /* prayer.json in Resources */,
+				B74DCE3928B525F5002D2D9F /* asr.mp3 in Resources */,
+				B74DCE4F28B53486002D2D9F /* Allahumme Barik Duası.mp3 in Resources */,
 				B791AFA128B0CA5800BCDF29 /* Main.storyboard in Resources */,
+				B74DCE4128B525F5002D2D9F /* nasr.mp3 in Resources */,
 				B774E00D28B161E700BAB3F3 /* HadisTableViewCell.xib in Resources */,
 				B774E01928B17BE500BAB3F3 /* download.json in Resources */,
+				B74DCE5128B53486002D2D9F /* Rabbenâ Duaları.mp3 in Resources */,
+				B74DCE3A28B525F5002D2D9F /* ihlas.mp3 in Resources */,
+				B74DCE3D28B525F5002D2D9F /* maun.mp3 in Resources */,
+				B74DCE3E28B525F5002D2D9F /* fatiha.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,10 +583,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B774E00728B1543B00BAB3F3 /* OtherAppsViewController.swift in Sources */,
+				B773E23428B430EE00F4A069 /* SureDetayViewController.swift in Sources */,
 				B774E01128B166B100BAB3F3 /* AdhanViewController.swift in Sources */,
 				B791AFA428B0CA5800BCDF29 /* Namaz_Sureleri.xcdatamodeld in Sources */,
 				B774E00528B1455A00BAB3F3 /* Extensions.swift in Sources */,
+				B773E23228B4297800F4A069 /* SureTableViewCell.swift in Sources */,
 				B791AF9E28B0CA5800BCDF29 /* ViewController.swift in Sources */,
+				B773E23028B4289900F4A069 /* SureViewController.swift in Sources */,
 				B774E01D28B17C6C00BAB3F3 /* SettingsTableViewCell.swift in Sources */,
 				B774E00C28B161E700BAB3F3 /* HadisViewController.swift in Sources */,
 				B774E00328B1427900BAB3F3 /* NamazViewController.swift in Sources */,
@@ -687,7 +791,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dsa.Namaz-Surelerisds";
+				PRODUCT_BUNDLE_IDENTIFIER = com.foxgame.NamazSureleriOgr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -718,7 +822,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dsa.Namaz-Surelerisds";
+				PRODUCT_BUNDLE_IDENTIFIER = com.foxgame.NamazSureleriOgr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

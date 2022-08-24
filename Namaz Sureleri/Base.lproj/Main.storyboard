@@ -220,7 +220,7 @@
                                     <constraint firstItem="vyG-MA-iOU" firstAttribute="top" secondItem="JEi-1S-Ruy" secondAttribute="bottom" id="ut6-nn-cpi"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fs-hR-R37">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fs-hR-R37" userLabel="remove">
                                 <rect key="frame" x="20" y="731" width="374" height="76"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="proBtnBig" translatesAutoresizingMaskIntoConstraints="NO" id="NYH-7w-jgd">
@@ -287,6 +287,7 @@
                         <outlet property="bottomRightLabel" destination="WhM-bC-rOI" id="hzz-9G-uN8"/>
                         <outlet property="forthLeftView" destination="sAX-cW-F5i" id="7j9-E5-JFB"/>
                         <outlet property="forthRightView" destination="9GT-Kb-4w9" id="F7b-e8-oR1"/>
+                        <outlet property="removeBackView" destination="5fs-hR-R37" id="O6D-ni-a2d"/>
                         <outlet property="removeView" destination="NYH-7w-jgd" id="eNr-Ju-ZWm"/>
                         <outlet property="secondLeftLabel" destination="USR-qm-sLr" id="vm6-yM-6PI"/>
                         <outlet property="secondLeftView" destination="jkn-4i-ufe" id="fR7-0N-Hro"/>
@@ -304,6 +305,7 @@
                         <outlet property="topRightLabel" destination="ClH-as-XmB" id="v5Z-tG-bOS"/>
                         <outlet property="topRightTrailingConstant" destination="aGs-Jd-nV7" id="tmZ-ug-GDI"/>
                         <outlet property="topRightView" destination="DOr-tV-Qq5" id="2jD-M1-AlO"/>
+                        <outlet property="topRightViewWidthCons" destination="t0x-Lt-eic" id="mg6-u6-cED"/>
                         <outlet property="twoThreeLineConstant" destination="stj-VI-gj6" id="vgR-CV-dhv"/>
                     </connections>
                 </viewController>
@@ -1116,6 +1118,8 @@ Tesbih Sayacı</string>
                         <outlet property="sunriseTime" destination="RpV-8w-fYg" id="mJP-2D-utK"/>
                         <outlet property="sunsetLbl" destination="1G5-34-Cqb" id="WjM-gj-BNT"/>
                         <outlet property="sunsetTime" destination="fNJ-Hy-3Jx" id="H8P-mI-jCm"/>
+                        <outlet property="viewLeadingConstant" destination="We9-pw-85u" id="bxN-Ag-wVD"/>
+                        <outlet property="viewTrailingCons" destination="PPp-jj-ItK" id="h3Z-Ot-vfl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uCn-m1-CZT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1213,17 +1217,19 @@ Tesbih Sayacı</string>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toppng 1" translatesAutoresizingMaskIntoConstraints="NO" id="vBP-rh-18c">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9CF-3l-ius">
-                                <rect key="frame" x="14" y="163" width="399" height="600"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9CF-3l-ius">
+                                <rect key="frame" x="10" y="134" width="394" height="246"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="246" id="NFH-JI-sew"/>
+                                </constraints>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SettingsTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" id="A2e-zo-WaG" customClass="SettingsTableViewCell" customModule="Namaz_Sureleri" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="399" height="48"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="394" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A2e-zo-WaG" id="ESG-OA-jB1">
-                                            <rect key="frame" x="0.0" y="0.0" width="399" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OL-A3-ljv">
@@ -1233,7 +1239,7 @@ Tesbih Sayacı</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D0H-g1-kc8">
-                                                    <rect key="frame" x="364" y="16" width="20" height="16"/>
+                                                    <rect key="frame" x="359" y="16" width="20" height="16"/>
                                                     <color key="tintColor" red="0.1450980392" green="0.24313725489999999" blue="0.42352941179999998" alpha="0.27000000000000002" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="WvO-3d-vuk"/>
@@ -1251,7 +1257,7 @@ Tesbih Sayacı</string>
                                                 <constraint firstItem="D0H-g1-kc8" firstAttribute="top" secondItem="ESG-OA-jB1" secondAttribute="top" constant="13" id="xMd-1T-x8q"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="tableLabel" destination="3OL-A3-ljv" id="vwP-wQ-o9s"/>
                                         </connections>
@@ -1273,7 +1279,10 @@ Tesbih Sayacı</string>
                         <viewLayoutGuide key="safeArea" id="NYJ-rH-NKK"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="NYJ-rH-NKK" firstAttribute="trailing" secondItem="9CF-3l-ius" secondAttribute="trailing" constant="10" id="0OH-Gt-ROe"/>
                             <constraint firstItem="r4x-gV-Nd6" firstAttribute="leading" secondItem="NYJ-rH-NKK" secondAttribute="leading" constant="30" id="4N3-gY-1Rj"/>
+                            <constraint firstItem="9CF-3l-ius" firstAttribute="leading" secondItem="NYJ-rH-NKK" secondAttribute="leading" constant="10" id="5Eb-2m-cDe"/>
+                            <constraint firstItem="9CF-3l-ius" firstAttribute="top" secondItem="r4x-gV-Nd6" secondAttribute="bottom" constant="30" id="L0g-ic-YNC"/>
                             <constraint firstItem="r4x-gV-Nd6" firstAttribute="top" secondItem="NYJ-rH-NKK" secondAttribute="top" constant="20" id="QED-PT-qMG"/>
                             <constraint firstItem="vBP-rh-18c" firstAttribute="leading" secondItem="NYJ-rH-NKK" secondAttribute="leading" id="VvL-d7-7wu"/>
                             <constraint firstItem="vBP-rh-18c" firstAttribute="trailing" secondItem="NYJ-rH-NKK" secondAttribute="trailing" id="deU-tN-Je3"/>
@@ -1315,7 +1324,7 @@ Tesbih Sayacı</string>
                                 <rect key="frame" x="338" y="64" width="46" height="40"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="agH-Kl-sOs">
-                                <rect key="frame" x="0.0" y="160" width="414" height="260"/>
+                                <rect key="frame" x="0.0" y="537" width="414" height="260"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -1350,8 +1359,9 @@ Tesbih Sayacı</string>
                                 </prototypes>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="D6c-ni-yHk">
-                                <rect key="frame" x="0.0" y="466" width="414" height="331"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="184" width="414" height="273"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="surecell2" id="O1O-v2-j8E" customClass="Sure2TableViewCell" customModule="Namaz_Sureleri" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
@@ -1362,11 +1372,13 @@ Tesbih Sayacı</string>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83M-cS-tN4">
                                                     <rect key="frame" x="40" y="11" width="354" height="21"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="83M-cS-tN4" firstAttribute="top" secondItem="UtO-Bn-kx0" secondAttribute="topMargin" id="Hfe-ZO-Pyl"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="83M-cS-tN4" secondAttribute="trailing" id="Szi-BL-1ca"/>
@@ -1374,69 +1386,74 @@ Tesbih Sayacı</string>
                                                 <constraint firstItem="83M-cS-tN4" firstAttribute="leading" secondItem="UtO-Bn-kx0" secondAttribute="leadingMargin" constant="20" id="dRh-nv-T8b"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="label2" destination="83M-cS-tN4" id="PgW-Js-ypu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Namaz Sureleri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRZ-fM-wap">
-                                <rect key="frame" x="35" y="430" width="350" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Namaz Sureleri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5E-rF-d0V">
+                                <rect key="frame" x="0.0" y="124" width="414" height="40"/>
+                                <color key="backgroundColor" red="0.40443909169999998" green="0.79550170899999995" blue="0.47837871310000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="2g6-tR-wda"/>
-                                    <constraint firstAttribute="width" constant="350" id="Oxi-On-bd7"/>
+                                    <constraint firstAttribute="height" constant="40" id="vbJ-xr-5Co"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Namaz Duaları" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5E-rF-d0V">
-                                <rect key="frame" x="35" y="124" width="350" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Namaz Duaları" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRZ-fM-wap">
+                                <rect key="frame" x="0.0" y="477" width="414" height="40"/>
+                                <color key="backgroundColor" red="0.40443909169999998" green="0.79550170899999995" blue="0.47837871310000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="350" id="40V-VM-MNa"/>
-                                    <constraint firstAttribute="height" constant="21" id="vbJ-xr-5Co"/>
+                                    <constraint firstAttribute="height" constant="40" id="2g6-tR-wda"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eGg-0G-EVK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="agH-Kl-sOs" firstAttribute="top" secondItem="cRZ-fM-wap" secondAttribute="bottom" constant="20" id="0go-zw-eIy"/>
                             <constraint firstItem="Z3j-kh-C6h" firstAttribute="leading" secondItem="eGg-0G-EVK" secondAttribute="leading" id="26u-re-lHK"/>
+                            <constraint firstItem="eGg-0G-EVK" firstAttribute="trailing" secondItem="x5E-rF-d0V" secondAttribute="trailing" id="5Nc-5S-myD"/>
                             <constraint firstItem="pcE-Fy-VFH" firstAttribute="top" secondItem="eGg-0G-EVK" secondAttribute="top" constant="20" id="8m1-Lf-LTL"/>
+                            <constraint firstItem="eGg-0G-EVK" firstAttribute="trailing" secondItem="cRZ-fM-wap" secondAttribute="trailing" id="GOv-jm-iOh"/>
                             <constraint firstAttribute="bottom" secondItem="Z3j-kh-C6h" secondAttribute="bottom" id="H9m-We-fIm"/>
+                            <constraint firstItem="cRZ-fM-wap" firstAttribute="top" secondItem="D6c-ni-yHk" secondAttribute="bottom" constant="20" id="HDG-7J-hos"/>
+                            <constraint firstItem="D6c-ni-yHk" firstAttribute="top" secondItem="x5E-rF-d0V" secondAttribute="bottom" constant="20" id="ITH-kG-ZHL"/>
                             <constraint firstItem="agH-Kl-sOs" firstAttribute="trailing" secondItem="eGg-0G-EVK" secondAttribute="trailing" id="MCM-Sq-1b2"/>
                             <constraint firstItem="eGg-0G-EVK" firstAttribute="trailing" secondItem="D6c-ni-yHk" secondAttribute="trailing" id="Rb9-or-jpG"/>
                             <constraint firstItem="eGg-0G-EVK" firstAttribute="trailing" secondItem="mcG-hb-AWK" secondAttribute="trailing" constant="30" id="Rpe-mP-Rws"/>
                             <constraint firstItem="mcG-hb-AWK" firstAttribute="top" secondItem="pcE-Fy-VFH" secondAttribute="top" id="SIb-Is-Cqj"/>
-                            <constraint firstItem="D6c-ni-yHk" firstAttribute="top" secondItem="cRZ-fM-wap" secondAttribute="bottom" constant="15" id="TeN-35-JdB"/>
-                            <constraint firstItem="cRZ-fM-wap" firstAttribute="top" secondItem="agH-Kl-sOs" secondAttribute="bottom" constant="10" id="Tn0-dh-m5U"/>
                             <constraint firstItem="Z3j-kh-C6h" firstAttribute="trailing" secondItem="eGg-0G-EVK" secondAttribute="trailing" id="WMa-2p-doR"/>
-                            <constraint firstItem="eGg-0G-EVK" firstAttribute="bottom" secondItem="D6c-ni-yHk" secondAttribute="bottom" constant="65" id="c32-os-Ker"/>
+                            <constraint firstItem="eGg-0G-EVK" firstAttribute="bottom" secondItem="agH-Kl-sOs" secondAttribute="bottom" constant="65" id="epf-GZ-j7Z"/>
                             <constraint firstItem="agH-Kl-sOs" firstAttribute="height" secondItem="Z3j-kh-C6h" secondAttribute="height" multiplier="0.29" id="fbi-1Z-MFx"/>
                             <constraint firstItem="mcG-hb-AWK" firstAttribute="width" secondItem="pcE-Fy-VFH" secondAttribute="width" multiplier="1.15" id="kUH-a0-Ll9"/>
                             <constraint firstItem="D6c-ni-yHk" firstAttribute="leading" secondItem="eGg-0G-EVK" secondAttribute="leading" id="ldl-Zm-BMJ"/>
                             <constraint firstItem="pcE-Fy-VFH" firstAttribute="leading" secondItem="eGg-0G-EVK" secondAttribute="leading" constant="30" id="m82-IH-jNX"/>
                             <constraint firstItem="agH-Kl-sOs" firstAttribute="leading" secondItem="eGg-0G-EVK" secondAttribute="leading" id="oke-GU-3Ln"/>
-                            <constraint firstItem="x5E-rF-d0V" firstAttribute="leading" secondItem="eGg-0G-EVK" secondAttribute="leading" constant="35" id="owh-8P-PUd"/>
-                            <constraint firstItem="cRZ-fM-wap" firstAttribute="leading" secondItem="eGg-0G-EVK" secondAttribute="leading" constant="35" id="pXC-9m-4qp"/>
+                            <constraint firstItem="x5E-rF-d0V" firstAttribute="leading" secondItem="eGg-0G-EVK" secondAttribute="leading" id="owh-8P-PUd"/>
+                            <constraint firstItem="cRZ-fM-wap" firstAttribute="leading" secondItem="eGg-0G-EVK" secondAttribute="leading" id="pXC-9m-4qp"/>
                             <constraint firstItem="x5E-rF-d0V" firstAttribute="top" secondItem="pcE-Fy-VFH" secondAttribute="bottom" constant="20" id="qZk-u6-9Cy"/>
                             <constraint firstItem="mcG-hb-AWK" firstAttribute="bottom" secondItem="pcE-Fy-VFH" secondAttribute="bottom" id="qqy-6l-Zsn"/>
                             <constraint firstItem="Z3j-kh-C6h" firstAttribute="top" secondItem="Puf-5G-5VQ" secondAttribute="top" id="wMj-sO-jV2"/>
-                            <constraint firstItem="agH-Kl-sOs" firstAttribute="top" secondItem="x5E-rF-d0V" secondAttribute="bottom" constant="15" id="zaC-j4-yTq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="pcE-Fy-VFH" id="WBt-jX-jbg"/>
                         <outlet property="backHeightConstant" destination="zQn-2D-HsJ" id="eM7-8F-Mxn"/>
                         <outlet property="backWidthConstant" destination="7cS-PA-WoC" id="cu7-a5-pxr"/>
+                        <outlet property="bottomNamazHeightCons" destination="2g6-tR-wda" id="a28-gt-2i2"/>
                         <outlet property="bottomNamazLabel" destination="cRZ-fM-wap" id="D1n-z4-PgO"/>
                         <outlet property="namazLabel" destination="x5E-rF-d0V" id="i5O-pa-Wod"/>
                         <outlet property="removeButton" destination="mcG-hb-AWK" id="LJB-GE-MKe"/>
                         <outlet property="sureTable" destination="agH-Kl-sOs" id="pCW-Nj-w4P"/>
                         <outlet property="table2" destination="D6c-ni-yHk" id="XVl-98-l2J"/>
+                        <outlet property="topNamazheightCons" destination="vbJ-xr-5Co" id="1tz-ty-guQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBt-Y5-6kA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

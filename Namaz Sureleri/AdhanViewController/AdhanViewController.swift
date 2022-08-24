@@ -28,7 +28,9 @@ class AdhanViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var backHeightCons: NSLayoutConstraint!
     
+    @IBOutlet weak var viewLeadingConstant: NSLayoutConstraint!
     
+    @IBOutlet weak var viewTrailingCons: NSLayoutConstraint!
     @IBOutlet weak var backView: UIImageView!
     @IBOutlet weak var adhanView6: UIView!
     @IBOutlet weak var adhanView1: UIView!
@@ -77,6 +79,8 @@ class AdhanViewController: UIViewController, CLLocationManagerDelegate {
         if UIDevice.current.userInterfaceIdiom == .pad  {
             backHeightCons.constant = 60
             backWidthCons.constant = 60
+            viewLeadingConstant.constant = 200
+            viewTrailingCons.constant = 200
         }
     }
     
@@ -130,6 +134,23 @@ class AdhanViewController: UIViewController, CLLocationManagerDelegate {
             self.dismiss(animated: true)
             
         }
+        if isAd == true {
+            self.dismiss(animated: true)
+            
+        }
+        
+        if Utils.isPremium == "premium"{
+//            removeView.isHidden = true
+        }else{
+            createAdd()
+//            removeView.isHidden = false
+            bannerView = GADBannerView(adSize: GADAdSizeBanner)
+            bannerView.adUnitID = Utils.bannerId
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
+            bannerView.delegate = self
+        
+    }
     }
     
    

@@ -65,7 +65,6 @@ class KibleViewController: UIViewController,GADBannerViewDelegate, GADFullScreen
         locationManager.delegate = self
         //initially, before getting location to get qibla direction, arrow not visible
         qiblaArrow.layer.opacity = 0
-        createAdd()
         //programmatically add the indicator line for current direction.
         let lineView = UIView()
         lineView.backgroundColor = .systemOrange
@@ -112,11 +111,7 @@ class KibleViewController: UIViewController,GADBannerViewDelegate, GADFullScreen
             kibleTop.constant = 5
         }
         
-        bannerView = GADBannerView(adSize: GADAdSizeBanner)
-        bannerView.adUnitID = Utils.bannerId
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-        bannerView.delegate = self
+       
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         
@@ -155,6 +150,20 @@ class KibleViewController: UIViewController,GADBannerViewDelegate, GADFullScreen
             self.dismiss(animated: true)
             
         }
+        if Utils.isPremium == "premium"{
+            removeView.isHidden = true
+        }else{
+            createAdd()
+            removeView.isHidden = false
+            bannerView = GADBannerView(adSize: GADAdSizeBanner)
+            bannerView.adUnitID = Utils.bannerId
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
+            bannerView.delegate = self
+        
+    }
+        
+        
         if self.traitCollection.userInterfaceStyle == .dark {
         }
         if isFirstOpen == true{
@@ -356,7 +365,6 @@ extension KibleViewController: CLLocationManagerDelegate {
         //only generate haptic feedback if withtin 1 degree of qibla, the qibla arrow is fully opaque and we've already left it or have never reached it
         if abs(newRad-qiblaRad) <= degreesToRadians(5) && isVisible && !facingQibla {
           facingQibla = true
-          createAdd()
           kibleView.image = UIImage(named: "kaaba2")
           let generator = UIImpactFeedbackGenerator(style: .rigid)
           generator.impactOccurred()

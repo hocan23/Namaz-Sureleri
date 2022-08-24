@@ -159,6 +159,9 @@ class HadisViewController: UIViewController,UITableViewDataSource, UITableViewDe
             if UIDevice.current.userInterfaceIdiom == .pad  {
 
             cell.textLbl.font = cell.textLbl.font!.withSize(UIScreen.main.bounds.size.height*0.015)
+            }else{
+                cell.textLbl.font = cell.textLbl.font!.withSize(UIScreen.main.bounds.size.height*0.018)
+
             }
             cell.shareButton.addTarget(self, action: #selector(shareButtonAction), for: .touchUpInside)
             cell.copyButton.addTarget(self, action: #selector(copyButtonAction), for: .touchUpInside)
@@ -173,11 +176,9 @@ class HadisViewController: UIViewController,UITableViewDataSource, UITableViewDe
     }
   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) ->CGFloat {
-        if UIDevice.current.userInterfaceIdiom == .pad  {
-            return 200
-        }else{
-        return UITableView.automaticDimension
-        }
+      
+        return 190
+        
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension

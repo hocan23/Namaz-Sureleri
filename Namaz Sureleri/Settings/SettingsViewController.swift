@@ -38,7 +38,7 @@ class SettingsViewController: UIViewController{
         homeView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(exitTapped)))
         SKPaymentQueue.default().add(self)
         tableView.isScrollEnabled = false
-        tableView.layer.cornerRadius = 20
+//        tableView.layer.cornerRadius = 20
        arrangeShadowforViews(vieww: tableView)
     }
     

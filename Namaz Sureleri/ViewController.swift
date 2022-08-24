@@ -10,9 +10,14 @@ import StoreKit
 import GoogleMobileAds
 
 class ViewController: UIViewController {
+    
+    
+    
     @IBOutlet weak var topRightTrailingConstant: NSLayoutConstraint!
     @IBOutlet weak var topLeftLeadingConstant: NSLayoutConstraint!
     
+    @IBOutlet weak var topRightViewWidthCons: NSLayoutConstraint!
+    @IBOutlet weak var removeBackView: UIView!
     @IBOutlet weak var topHeightConstant: NSLayoutConstraint!
     @IBOutlet weak var twoThreeLineConstant: NSLayoutConstraint!
     
@@ -111,6 +116,10 @@ class ViewController: UIViewController {
         if UIDevice.current.userInterfaceIdiom == .pad  {
 //            topHeightProportionConstant.constant = 0.25
             topHeightConstant.constant = view.frame.height*0.02
+        }else{
+            topRightTrailingConstant.constant = view.frame.width*0.07
+            topLeftLeadingConstant.constant = view.frame.width*0.07
+            topRightViewWidthCons.constant =  view.frame.width*0.05
         }
 
 
@@ -119,6 +128,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if Utils.isPremium == "premium"{
             removeView.isHidden = true
+            removeBackView.isHidden = true
         }else{
             createAdd()
             removeView.isHidden = false

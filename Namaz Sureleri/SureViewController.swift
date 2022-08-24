@@ -12,6 +12,8 @@ import GoogleMobileAds
 class SureViewController: UIViewController {
     @IBOutlet weak var sureTable: UITableView!
     
+    @IBOutlet weak var topNamazheightCons: NSLayoutConstraint!
+    @IBOutlet weak var bottomNamazHeightCons: NSLayoutConstraint!
     @IBOutlet weak var bottomNamazLabel: UILabel!
     @IBOutlet weak var namazLabel: UILabel!
     @IBOutlet weak var table2: UITableView!
@@ -41,11 +43,20 @@ class SureViewController: UIViewController {
         sureTable.layer.cornerRadius = 20
         namazLabel.font = namazLabel.font!.withSize(UIScreen.main.bounds.size.height*0.02)
         bottomNamazLabel.font = bottomNamazLabel.font!.withSize(UIScreen.main.bounds.size.height*0.02)
-        print(view.frame.height)
+        namazLabel.layer.cornerRadius = 10
+        bottomNamazLabel.layer.cornerRadius = 10
+
+        if view.frame.height < 715 {
+            namazLabel.font = namazLabel.font!.withSize(UIScreen.main.bounds.size.height*0.025)
+            bottomNamazLabel.font = bottomNamazLabel.font!.withSize(UIScreen.main.bounds.size.height*0.025)
+        }
 //        arrangeShadowforViews(vieww: sureTable)
         if UIDevice.current.userInterfaceIdiom == .pad  {
             backHeightConstant.constant = 60
             backWidthConstant.constant = 60
+            bottomNamazHeightCons.constant = 60
+            topNamazheightCons.constant = 60
+
         }
             }
     override func viewWillAppear(_ animated: Bool) {
@@ -137,7 +148,12 @@ extension SureViewController: UITableViewDelegate, UITableViewDataSource {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "surecell", for: indexPath) as! SureTableViewCell
         cell.sureNameLbl.text = Utils.sureİsimleri[indexPath.row]
+            if view.frame.height < 715 {
+                cell.sureNameLbl.font = cell.sureNameLbl.font!.withSize(UIScreen.main.bounds.size.height*0.025)
+
+            }else{
         cell.sureNameLbl.font = cell.sureNameLbl.font!.withSize(UIScreen.main.bounds.size.height*0.02)
+            }
             if cell.isSelected {
                 tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
              } else {
@@ -149,7 +165,12 @@ extension SureViewController: UITableViewDelegate, UITableViewDataSource {
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "surecell2", for: indexPath) as! Sure2TableViewCell
             cell.label2.text = Utils.sureİsimleri[indexPath.row+6]
-            cell.label2.font = cell.label2.font!.withSize(UIScreen.main.bounds.size.height*0.02)
+            if view.frame.height < 715 {
+                cell.label2.font = cell.label2.font!.withSize(UIScreen.main.bounds.size.height*0.025)
+
+            }else{
+        cell.label2.font = cell.label2.font!.withSize(UIScreen.main.bounds.size.height*0.02)
+            }
             if cell.isSelected {
                 tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
              } else {
@@ -163,7 +184,7 @@ extension SureViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 50
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == sureTable{

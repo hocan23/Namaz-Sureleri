@@ -32,10 +32,15 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         audioSlider.value = 0.0
-
+        audioSlider.maximumValue = 1
         print(Utils.sureMetin[0])
         textView.text = Utils.sureIcerigi[index!]
+        if view.frame.height < 715 {
+            textView.font = textView.font!.withSize(UIScreen.main.bounds.size.height*0.025)
+
+        }else{
         textView.font = textView.font!.withSize(UIScreen.main.bounds.size.height*0.02)
+        }
         backButton.isUserInteractionEnabled = true
         backButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backButtonTapped)))
         removeButton.isUserInteractionEnabled = true
@@ -85,15 +90,16 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
     }
     @objc func backButtonTapped(){
         backButton.zoomIn()
-
-        if interstitial != nil {
-            player?.stop()
-            interstitial?.present(fromRootViewController: self)
-            isAd = true
-        } else {
-            print("Ad wasn't ready")
-            self.dismiss(animated: true)
-        }
+        player?.stop()
+        dismiss(animated: true)
+//        if interstitial != nil {
+//            player?.stop()
+//            interstitial?.present(fromRootViewController: self)
+//            isAd = true
+//        } else {
+//            print("Ad wasn't ready")
+//            self.dismiss(animated: true)
+//        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -109,13 +115,15 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
     
     
     @objc func audioSliderTapped (){
-        player?.play(atTime: timer?.timeInterval ?? 0)
+        print(TimeInterval( audioSlider.value))
+        player?.currentTime = TimeInterval( audioSlider.value)
+//        player?.play(atTime: timer?.timeInterval ?? 0)
     }
     
     
     @objc func removeButtonTapped(){
         removeButton.zoomIn()
-
+        player?.stop()
         if SKPaymentQueue.canMakePayments(){
             let set :  Set<String> = [Products.removeAds.rawValue]
             let productRequest = SKProductsRequest(productIdentifiers: set)
@@ -151,7 +159,7 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
         if let player = player, player.isPlaying{
             player.stop()
             playButton.image = UIImage(systemName: "play.circle.fill")
-            audioSlider.value = 0
+//            audioSlider.value = 0
         }else{
          
             let urlString = Bundle.main.path(forResource: name, ofType: type)
@@ -180,7 +188,7 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
     }
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("finished")//It is working now! printed "finished"!
-//        playView.image = UIImage(named: "playBtn")
+        playButton.image = UIImage(systemName: "play.circle.fill")
     }
     
 

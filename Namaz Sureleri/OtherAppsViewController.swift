@@ -12,6 +12,25 @@ import GoogleMobileAds
 class OtherAppsViewController: UIViewController {
 
     
+    @IBOutlet weak var bottomleftdowntop: NSLayoutConstraint!
+    @IBOutlet weak var bottomlefttraildown: NSLayoutConstraint!
+    @IBOutlet weak var bottomleftdownlead: NSLayoutConstraint!
+    @IBOutlet weak var bottomrightdowntop: NSLayoutConstraint!
+    @IBOutlet weak var bottomrighttrail: NSLayoutConstraint!
+    @IBOutlet weak var bottomrightlead: NSLayoutConstraint!
+    @IBOutlet weak var midrightdowntop: NSLayoutConstraint!
+    @IBOutlet weak var midrightdownlead: NSLayoutConstraint!
+    @IBOutlet weak var midrightdowntrail: NSLayoutConstraint!
+    @IBOutlet weak var midlefttop: NSLayoutConstraint!
+    @IBOutlet weak var midlefttrail: NSLayoutConstraint!
+    @IBOutlet weak var middownlead: NSLayoutConstraint!
+    @IBOutlet weak var topleftdowntop: NSLayoutConstraint!
+    @IBOutlet weak var topleftdowntrail: NSLayoutConstraint!
+    @IBOutlet weak var topleftdownlead: NSLayoutConstraint!
+    @IBOutlet weak var toprightdowntop: NSLayoutConstraint!
+    @IBOutlet weak var toprightdownleading: NSLayoutConstraint!
+    @IBOutlet weak var toprightdowntrailing: NSLayoutConstraint!
+    @IBOutlet weak var topRightWidthConstant: NSLayoutConstraint!
     @IBOutlet weak var backHeightCons: NSLayoutConstraint!
     @IBOutlet weak var backWidthCons: NSLayoutConstraint!
     @IBOutlet weak var bottomRightText: UILabel!
@@ -114,6 +133,28 @@ class OtherAppsViewController: UIViewController {
         if UIDevice.current.userInterfaceIdiom == .pad  {
             backHeightCons.constant = 60
             backWidthCons.constant = 60
+            topLeftLeadingConstant.constant = view.frame.width*0.1
+            topRightTrailingConstant.constant = view.frame.width*0.1
+            topRightWidthConstant.constant = 0.01
+            toprightdowntop.constant = 30
+            toprightdownleading.constant = 30
+            toprightdowntrailing.constant = 30
+            topleftdowntop.constant = 30
+            topleftdownlead.constant = 30
+            topleftdownlead.constant = 30
+            middownlead.constant = 30
+            midlefttop.constant = 30
+            midlefttrail.constant = 30
+            midrightdowntop.constant = 30
+            midrightdownlead.constant = 30
+            midrightdowntrail.constant = 30
+            bottomleftdowntop.constant = 30
+            bottomleftdownlead.constant = 30
+            bottomlefttraildown.constant = 30
+            bottomrightdowntop.constant = 30
+            bottomrightlead.constant = 30
+            bottomrighttrail.constant = 30
+            
         }
         
     }
@@ -137,33 +178,44 @@ class OtherAppsViewController: UIViewController {
     }
     
     @objc func topLeftViewTapped(){
+        topLeftView.zoomIn()
+
         if let url = URL(string: "https://apps.apple.com/us/app/elif-ba-%C3%B6%C4%9Freniyorum-sesli/id1491565588?platform=iphone") {
             UIApplication.shared.open(url)
         }
    
     }
     @objc func topRightViewTapped(){
-        if let url = URL(string: " https://apps.apple.com/us/app/dhikr-tasbeeh-counter-app/id1639099844") {
+        topRightView.zoomIn()
+
+        if let url = URL(string: "https://apps.apple.com/us/app/dhikr-tasbeeh-counter-app/id1639099844") {
             UIApplication.shared.open(url)
         }
     }
     @objc func midLeftViewTapped(){
+        midLeftView.zoomIn()
+
         if let url = URL(string: "https://apps.apple.com/us/app/islamic-wallpaper-hd-pro/id1632238123") {
             UIApplication.shared.open(url)
         }
     }
     @objc func middleRightViewTapped(){
+        middleRightView.zoomIn()
+
         if let url = URL(string: "https://apps.apple.com/us/app/listen-quran-turkish-ofline/id1450080130?platform=iphone") {
             UIApplication.shared.open(url)
         }
     }
     @objc func bottomRightViewTapped(){
-        if let url = URL(string: "https://apps.apple.com/us/app/baby-sleep-sound-white-noise/id1638514663?platform=iphone") {
+        bottomRightView.zoomIn()
+
+        if let url = URL(string: "https://apps.apple.com/us/app/learn-abc-kids/id1412549968?platform=iphone") {
             UIApplication.shared.open(url)
         }
     }
     @objc func bottomLeftViewTapped(){
-        
+        bottomLeftView.zoomIn()
+
         if let url = URL(string: "https://apps.apple.com/us/app/baby-sleep-sound-white-noise/id1638514663?platform=iphone") {
             UIApplication.shared.open(url)
         }
@@ -172,6 +224,8 @@ class OtherAppsViewController: UIViewController {
        
     }
     @objc func removeViewTapped(){
+        removeView.zoomIn()
+
         if SKPaymentQueue.canMakePayments(){
             let set :  Set<String> = [Products.removeAds.rawValue]
             let productRequest = SKProductsRequest(productIdentifiers: set)
@@ -181,6 +235,8 @@ class OtherAppsViewController: UIViewController {
         }
     }
     @objc func backViewTapped(){
+        backView.zoomIn()
+
         if interstitial != nil {
             interstitial?.present(fromRootViewController: self)
             isAd = true

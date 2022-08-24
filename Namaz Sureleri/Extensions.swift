@@ -101,13 +101,15 @@ class Utils{
     sureİsimleri.append("Amenerrasulü")
     sureİsimleri.append("Asr Suresi")
     
-    
-        soundtag.append("Allahümme Salli Duası")
-        soundtag.append("Ettehiyyatü Duası")
-        soundtag.append("Allahumme Barik Duası")
-        soundtag.append("Kunut Duaları")
-        soundtag.append("Rabbenâ Duaları")
         soundtag.append("Sübhaneke Duası")
+        soundtag.append("Ettehiyyatü Duası")
+
+        
+        soundtag.append("Allahümme Salli Duası")
+        soundtag.append("Allahumme Barik Duası")
+        soundtag.append("Rabbenâ Duaları")
+      
+        soundtag.append("Kunut Duaları")
 
         
         

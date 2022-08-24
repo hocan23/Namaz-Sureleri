@@ -64,8 +64,8 @@ class ViewController: UIViewController {
     func setupUi(){
         Utils.addSure()
         Utils.isPremium = Utils.readLocal(key: "purchase")
-        topLeftLeadingConstant.constant = view.frame.width*0.05
-        topRightTrailingConstant.constant = view.frame.width*0.05
+        topLeftLeadingConstant.constant = view.frame.width*0.09
+        topRightTrailingConstant.constant = view.frame.width*0.09
         OneTwoLineConstant.constant = view.frame.height*0.011
         twoThreeLineConstant.constant = view.frame.height*0.011
         threeFourLineCONSTANT.constant = view.frame.height*0.011
@@ -166,12 +166,16 @@ class ViewController: UIViewController {
     }
     
     @objc func topLeftViewTapped(){
+        topLeftView.zoomIn()
+
         let destinationVC = storyboard?.instantiateViewController(withIdentifier: "NamazViewController") as! NamazViewController
         destinationVC.modalPresentationStyle = .fullScreen
         destinationVC.pageType = .namaz
         self.present(destinationVC, animated: true, completion: nil)
     }
     @objc func topRightViewTapped(){
+        topRightView.zoomIn()
+
         let destinationVC = storyboard?.instantiateViewController(withIdentifier: "NamazViewController") as! NamazViewController
         destinationVC.modalPresentationStyle = .fullScreen
         destinationVC.pageType = .abdest
@@ -179,39 +183,52 @@ class ViewController: UIViewController {
         
     }
     @objc func secondRightViewTapped(){
+        secondRightView.zoomIn()
+
         let destinationVC = storyboard?.instantiateViewController(withIdentifier: "AdhanViewController") as! AdhanViewController
         destinationVC.modalPresentationStyle = .fullScreen
         self.present(destinationVC, animated: true, completion: nil)
         
     }
     @objc func secondLeftViewTapped(){
+        secondLeftView.zoomIn()
+
         let destinationVC = storyboard?.instantiateViewController(withIdentifier: "SureViewController") as! SureViewController
         destinationVC.modalPresentationStyle = .fullScreen
         self.present(destinationVC, animated: true, completion: nil)
         
     }
     @objc func thirdLeftViewTapped(){
+        thirdLeftView.zoomIn()
+
         let destinationVC = storyboard?.instantiateViewController(withIdentifier: "KibleViewController") as! KibleViewController
         destinationVC.modalPresentationStyle = .fullScreen
         self.present(destinationVC, animated: true, completion: nil)
     }
     @objc func thirdRightViewTapped(){
+        thirdRightView.zoomIn()
+
         let destinationVC = storyboard?.instantiateViewController(withIdentifier: "HadisViewController") as! HadisViewController
         destinationVC.modalPresentationStyle = .fullScreen
         self.present(destinationVC, animated: true, completion: nil)
     }
     @objc func forthLeftViewTapped(){
+        forthLeftView.zoomIn()
+
         let destinationVC = storyboard?.instantiateViewController(withIdentifier: "OtherAppsViewController") as! OtherAppsViewController
         destinationVC.modalPresentationStyle = .fullScreen
         self.present(destinationVC, animated: true, completion: nil)
     }
     @objc func forthRightViewTapped(){
+        forthRightView.zoomIn()
+
         let destinationVC = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
         destinationVC.modalPresentationStyle = .fullScreen
         self.present(destinationVC, animated: true, completion: nil)
         
     }
     @objc func removeViewTapped(){
+        removeView.zoomIn()
         if SKPaymentQueue.canMakePayments(){
             let set :  Set<String> = [Products.removeAds.rawValue]
             let productRequest = SKProductsRequest(productIdentifiers: set)

@@ -82,6 +82,8 @@ class HadisViewController: UIViewController,UITableViewDataSource, UITableViewDe
     }
     }
     @objc func removeButtonViewTapped (){
+        removeButtonView.zoomIn()
+
         if SKPaymentQueue.canMakePayments(){
             let set :  Set<String> = [Products.removeAds.rawValue]
             let productRequest = SKProductsRequest(productIdentifiers: set)
@@ -91,6 +93,8 @@ class HadisViewController: UIViewController,UITableViewDataSource, UITableViewDe
         }
     }
     @objc func backButtonViewTapped (){
+        backButtonView.zoomIn()
+
         if interstitial != nil {
             interstitial?.present(fromRootViewController: self)
             isAd = true
@@ -152,6 +156,10 @@ class HadisViewController: UIViewController,UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? HadisTableViewCell{
             cell.textLbl.text = Utils.hadiths[indexPath.row]
+            if UIDevice.current.userInterfaceIdiom == .pad  {
+
+            cell.textLbl.font = cell.textLbl.font!.withSize(UIScreen.main.bounds.size.height*0.015)
+            }
             cell.shareButton.addTarget(self, action: #selector(shareButtonAction), for: .touchUpInside)
             cell.copyButton.addTarget(self, action: #selector(copyButtonAction), for: .touchUpInside)
             return cell
@@ -165,14 +173,17 @@ class HadisViewController: UIViewController,UITableViewDataSource, UITableViewDe
     }
   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) ->CGFloat {
-        
+        if UIDevice.current.userInterfaceIdiom == .pad  {
+            return 200
+        }else{
         return UITableView.automaticDimension
-        
+        }
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
     @objc func shareButtonAction (sender: UIButton) {
+        
         UIGraphicsBeginImageContext(view.frame.size)
         view.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -180,7 +191,7 @@ class HadisViewController: UIViewController,UITableViewDataSource, UITableViewDe
         
         let textToShare =  Utils.hadiths[sender.tag]
         
-        if let myWebsite = URL(string: "https://apps.apple.com/us/app/islamic-wallpaper-hd-pro/id1632238123") {//Enter link to your app here
+        if let myWebsite = URL(string: "https://apps.apple.com/tr/app/namaz-surelerini-%C3%B6%C4%9Freniyorum/id1491638476") {//Enter link to your app here
             let objectsToShare = [textToShare, myWebsite, image ?? #imageLiteral(resourceName: "app-logo")] as [Any]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
             

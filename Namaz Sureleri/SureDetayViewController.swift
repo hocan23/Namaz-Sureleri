@@ -42,6 +42,8 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
         removeButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(removeButtonTapped)))
         playButton.isUserInteractionEnabled = true
         playButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(playButtonTapped)))
+        audioSlider.isUserInteractionEnabled = true
+        audioSlider.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(audioSliderTapped)))
         textView.layer.cornerRadius = 20
         arrangeShadowforViews(vieww: textView)
         textView.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 10)
@@ -82,7 +84,10 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
         vieww.layer.shadowOpacity = 1
     }
     @objc func backButtonTapped(){
+        backButton.zoomIn()
+
         if interstitial != nil {
+            player?.stop()
             interstitial?.present(fromRootViewController: self)
             isAd = true
         } else {
@@ -102,7 +107,15 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
+    
+    @objc func audioSliderTapped (){
+        player?.play(atTime: timer?.timeInterval ?? 0)
+    }
+    
+    
     @objc func removeButtonTapped(){
+        removeButton.zoomIn()
+
         if SKPaymentQueue.canMakePayments(){
             let set :  Set<String> = [Products.removeAds.rawValue]
             let productRequest = SKProductsRequest(productIdentifiers: set)
@@ -113,7 +126,9 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @objc func playButtonTapped(){
-        audioSlider.value = 0.0
+        playButton.zoomIn()
+
+//        audioSlider.value = 0.0
 //        audioSlider.maximumValue = Float((player?.duration)!)
         playMusic(name: "\(Utils.soundtag[index!])", type: "mp3")
 

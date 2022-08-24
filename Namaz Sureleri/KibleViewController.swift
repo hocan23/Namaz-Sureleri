@@ -171,6 +171,8 @@ class KibleViewController: UIViewController,GADBannerViewDelegate, GADFullScreen
     }
     
     @objc func removeViewTapped(){
+        removeView.zoomIn()
+
         if SKPaymentQueue.canMakePayments(){
             let set :  Set<String> = [Products.removeAds.rawValue]
             let productRequest = SKProductsRequest(productIdentifiers: set)
@@ -180,6 +182,8 @@ class KibleViewController: UIViewController,GADBannerViewDelegate, GADFullScreen
         }
     }
     @objc func backViewTapped(){
+        backView.zoomIn()
+
         if interstitial != nil {
             interstitial?.present(fromRootViewController: self)
             isAd = true

@@ -19,6 +19,8 @@ class NamazViewController: UIViewController {
     
     
     
+    @IBOutlet weak var textTrailingConstant: NSLayoutConstraint!
+    @IBOutlet weak var textLeadingConstant: NSLayoutConstraint!
     
     
     @IBOutlet weak var buttonsHeightCons: NSLayoutConstraint!
@@ -120,6 +122,11 @@ class NamazViewController: UIViewController {
             grayImage.layer.cornerRadius = 40
             backwidthCons.constant = 60
             backHeightCons.constant = 60
+            previousButton.font = previousButton.font!.withSize(UIScreen.main.bounds.size.height*0.02)
+            afterButton.font = afterButton.font!.withSize(UIScreen.main.bounds.size.height*0.02)
+            textLeadingConstant.constant = 100
+            textTrailingConstant.constant = 100
+
         }
         
         
@@ -139,6 +146,8 @@ class NamazViewController: UIViewController {
     
     
     @objc func afterButtonTapped(){
+        afterButton.zoomIn()
+
         index+=1
 
        
@@ -205,6 +214,8 @@ class NamazViewController: UIViewController {
     }
     
     @objc func previousButtonTapped(){
+        previousButton.zoomIn()
+
         index-=1
         if index == 1{
             previousButton.isUserInteractionEnabled = false
@@ -235,6 +246,7 @@ class NamazViewController: UIViewController {
     }
     
     @objc func removeViewTapped(){
+        removeView.zoomIn()
         if SKPaymentQueue.canMakePayments(){
             let set :  Set<String> = [Products.removeAds.rawValue]
             let productRequest = SKProductsRequest(productIdentifiers: set)
@@ -245,6 +257,8 @@ class NamazViewController: UIViewController {
     }
     
     @objc func backButtonTapped(){
+        backButton.zoomIn()
+
         if interstitial != nil {
             interstitial?.present(fromRootViewController: self)
             isAd = true

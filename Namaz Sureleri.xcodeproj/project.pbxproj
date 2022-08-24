@@ -46,6 +46,7 @@
 		B774E01928B17BE500BAB3F3 /* download.json in Resources */ = {isa = PBXBuildFile; fileRef = B774E01828B17BE500BAB3F3 /* download.json */; };
 		B774E01D28B17C6C00BAB3F3 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E01B28B17C6C00BAB3F3 /* SettingsTableViewCell.swift */; };
 		B774E01E28B17C6C00BAB3F3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774E01C28B17C6C00BAB3F3 /* SettingsViewController.swift */; };
+		B78EDFF628B62C850075BFE3 /* Sure2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78EDFF528B62C850075BFE3 /* Sure2TableViewCell.swift */; };
 		B791AF9A28B0CA5800BCDF29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B791AF9928B0CA5800BCDF29 /* AppDelegate.swift */; };
 		B791AF9C28B0CA5800BCDF29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B791AF9B28B0CA5800BCDF29 /* SceneDelegate.swift */; };
 		B791AF9E28B0CA5800BCDF29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B791AF9D28B0CA5800BCDF29 /* ViewController.swift */; };
@@ -119,6 +120,7 @@
 		B774E01828B17BE500BAB3F3 /* download.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = download.json; sourceTree = "<group>"; };
 		B774E01B28B17C6C00BAB3F3 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		B774E01C28B17C6C00BAB3F3 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B78EDFF528B62C850075BFE3 /* Sure2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sure2TableViewCell.swift; sourceTree = "<group>"; };
 		B791AF9628B0CA5800BCDF29 /* Namaz Sureleri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Namaz Sureleri.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B791AF9928B0CA5800BCDF29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B791AF9B28B0CA5800BCDF29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				B773E22E28B2BA5C00F4A069 /* Configuration.storekit */,
 				B774E01228B166FC00BAB3F3 /* KibleViewController.swift */,
 				B773E22F28B4289900F4A069 /* SureViewController.swift */,
+				B78EDFF528B62C850075BFE3 /* Sure2TableViewCell.swift */,
 				B773E23328B430EE00F4A069 /* SureDetayViewController.swift */,
 				B74DCE4628B53486002D2D9F /* Dualar */,
 				B773E23128B4297800F4A069 /* SureTableViewCell.swift */,
@@ -591,6 +594,7 @@
 				B791AF9E28B0CA5800BCDF29 /* ViewController.swift in Sources */,
 				B773E23028B4289900F4A069 /* SureViewController.swift in Sources */,
 				B774E01D28B17C6C00BAB3F3 /* SettingsTableViewCell.swift in Sources */,
+				B78EDFF628B62C850075BFE3 /* Sure2TableViewCell.swift in Sources */,
 				B774E00C28B161E700BAB3F3 /* HadisViewController.swift in Sources */,
 				B774E00328B1427900BAB3F3 /* NamazViewController.swift in Sources */,
 				B774E00E28B161E700BAB3F3 /* HadisTableViewCell.swift in Sources */,
@@ -779,6 +783,7 @@
 				DEVELOPMENT_TEAM = CDLRAYVNZ9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Namaz Sureleri/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Namaz Rehberi";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -810,6 +815,7 @@
 				DEVELOPMENT_TEAM = CDLRAYVNZ9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Namaz Sureleri/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Namaz Rehberi";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

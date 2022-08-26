@@ -661,7 +661,6 @@ Tesbih Sayacı</string>
                                     <constraint firstItem="igt-EV-Cbp" firstAttribute="top" secondItem="BH3-eb-n6Z" secondAttribute="top" constant="8" id="jap-98-Rmy"/>
                                     <constraint firstAttribute="trailing" secondItem="igt-EV-Cbp" secondAttribute="trailing" constant="15" id="oOq-Wt-6dM"/>
                                     <constraint firstItem="4jD-ct-Bzu" firstAttribute="leading" secondItem="BH3-eb-n6Z" secondAttribute="leading" constant="20" id="ojp-MR-dRq"/>
-                                    <constraint firstAttribute="bottom" secondItem="4jD-ct-Bzu" secondAttribute="bottom" constant="8" id="up5-Rj-u7Y"/>
                                     <constraint firstItem="igt-EV-Cbp" firstAttribute="height" secondItem="BH3-eb-n6Z" secondAttribute="height" multiplier="0.45" id="ws6-9P-9uH"/>
                                     <constraint firstAttribute="trailing" secondItem="4jD-ct-Bzu" secondAttribute="trailing" constant="20" id="zIT-nA-b5N"/>
                                 </constraints>
@@ -725,22 +724,30 @@ Tesbih Sayacı</string>
                         <outlet property="bottomLeftView" destination="MUp-Rl-2Vk" id="2pO-Uw-nJC"/>
                         <outlet property="bottomRightText" destination="Oug-xo-c1k" id="yNR-qK-seP"/>
                         <outlet property="bottomRightView" destination="bbD-tf-kLs" id="1k2-GO-xqO"/>
+                        <outlet property="bottomleftbottombottom" destination="4zd-Pe-1KP" id="8Uh-eO-rtr"/>
                         <outlet property="bottomleftdownlead" destination="i5J-U0-aGc" id="IpG-wU-1Oc"/>
                         <outlet property="bottomleftdowntop" destination="zlU-cd-3km" id="fbN-34-7c1"/>
+                        <outlet property="bottomlefttoptop" destination="eRo-dZ-4v9" id="wHB-IE-EeK"/>
                         <outlet property="bottomlefttraildown" destination="7Eh-OV-6vB" id="xfs-Wa-ezl"/>
+                        <outlet property="bottomrightbottombottom" destination="qHw-zU-Cy1" id="dsl-lg-TI0"/>
                         <outlet property="bottomrightdowntop" destination="3Hv-UH-shf" id="Keo-RO-AVr"/>
                         <outlet property="bottomrightlead" destination="oq6-x4-1ru" id="dh1-vg-Fjd"/>
+                        <outlet property="bottomrighttoptop" destination="neh-kM-Xk6" id="hTJ-lG-GgL"/>
                         <outlet property="bottomrighttrail" destination="lcE-Ev-tI6" id="Yoj-XU-Cby"/>
                         <outlet property="midLefText" destination="wpe-FQ-6po" id="skG-Z5-SxI"/>
                         <outlet property="midLeftView" destination="xwU-sP-a2R" id="i1L-Ak-brg"/>
                         <outlet property="midRightText" destination="Z6q-PL-1pO" id="f2R-Yh-EP2"/>
                         <outlet property="middleRightView" destination="Ltb-wU-m42" id="gwF-UT-heG"/>
                         <outlet property="middownlead" destination="4Pi-Bc-tGK" id="t2q-Sw-ZJ4"/>
+                        <outlet property="midleftbottombottom" destination="iJR-Gj-DuS" id="opO-rq-QH7"/>
                         <outlet property="midlefttop" destination="A4m-ub-xtF" id="Ytz-3w-2dB"/>
+                        <outlet property="midlefttoptop" destination="wrv-af-nZd" id="Uaa-Za-Mpj"/>
                         <outlet property="midlefttrail" destination="Ict-Eb-4LN" id="mdy-Jt-da2"/>
+                        <outlet property="midrightbottombottomcons" destination="Z8R-rm-TpE" id="faI-de-sfm"/>
                         <outlet property="midrightdownlead" destination="jqB-wB-HyF" id="Q5s-KQ-xQs"/>
                         <outlet property="midrightdowntop" destination="lhe-G1-YJL" id="wqD-X7-39a"/>
                         <outlet property="midrightdowntrail" destination="iKA-BM-17g" id="gfS-Dr-mCn"/>
+                        <outlet property="midrighttoptopcons" destination="kG4-sC-z34" id="h8I-AV-i8d"/>
                         <outlet property="removeView" destination="UfY-5L-FzJ" id="pzX-8p-Txs"/>
                         <outlet property="topLeftLeadingConstant" destination="lbp-D2-vil" id="R6B-rg-Ah8"/>
                         <outlet property="topLeftText" destination="G68-Jy-kKd" id="S2z-PC-hfO"/>
@@ -749,12 +756,16 @@ Tesbih Sayacı</string>
                         <outlet property="topRightTrailingConstant" destination="jsR-IL-JAF" id="qpa-GN-bGq"/>
                         <outlet property="topRightView" destination="BH3-eb-n6Z" id="Q3e-Zt-DDv"/>
                         <outlet property="topRightWidthConstant" destination="TAu-Kg-g2k" id="ga1-B6-VxH"/>
+                        <outlet property="topleftbottomcons" destination="48J-2o-VZf" id="q4b-1r-PSO"/>
                         <outlet property="topleftdownlead" destination="oX8-mb-mx8" id="Se5-VX-P26"/>
                         <outlet property="topleftdowntop" destination="bez-Ev-Reg" id="pFW-kX-owc"/>
                         <outlet property="topleftdowntrail" destination="zqn-lQ-BUX" id="MHf-lM-t8g"/>
+                        <outlet property="toprightBottomcons" destination="Xhj-fl-9eF" id="EBl-0K-XYd"/>
                         <outlet property="toprightdownleading" destination="ojp-MR-dRq" id="ti3-Tq-TP0"/>
                         <outlet property="toprightdowntop" destination="cnT-o8-MAp" id="E4t-xZ-aXO"/>
                         <outlet property="toprightdowntrailing" destination="zIT-nA-b5N" id="2mQ-sp-GsF"/>
+                        <outlet property="toprighttopcons" destination="jap-98-Rmy" id="zek-92-5NZ"/>
+                        <outlet property="toptopımagetop" destination="gaj-20-ZDL" id="8rN-bZ-DgS"/>
                         <outlet property="twoThreeLineConstant" destination="dcd-aB-dQl" id="u16-rb-4TT"/>
                     </connections>
                 </viewController>
@@ -842,6 +853,7 @@ Tesbih Sayacı</string>
                         <outlet property="backHeightCons" destination="HdE-Lo-OG5" id="lkJ-ws-aM8"/>
                         <outlet property="backWidthCons" destination="kGb-0q-yo0" id="T2v-ba-YzU"/>
                         <outlet property="removeButtonView" destination="y29-qy-MKy" id="zvj-xG-5oK"/>
+                        <outlet property="tableBottomCons" destination="LeJ-4U-bNi" id="pH6-4u-wOh"/>
                         <outlet property="tableLeadingCons" destination="30R-5x-SKs" id="PNU-0M-Ber"/>
                         <outlet property="tableTrailingCons" destination="doe-vF-d1s" id="N7F-05-KKN"/>
                         <outlet property="tableView" destination="MOk-i1-lea" id="kpq-DJ-DCh"/>
@@ -1099,6 +1111,7 @@ Tesbih Sayacı</string>
                     </view>
                     <connections>
                         <outlet property="ASRtİME" destination="7uI-hO-jJW" id="pHu-Jb-AfM"/>
+                        <outlet property="adhanBottomCons" destination="VVR-NY-UZX" id="M4e-ka-2Bt"/>
                         <outlet property="adhanView1" destination="p1q-2f-MMI" id="sTM-RF-zzT"/>
                         <outlet property="adhanView6" destination="AY9-AX-K1P" id="0UQ-ev-qLf"/>
                         <outlet property="altViewHeight" destination="S8V-fz-8el" id="Shp-48-8wW"/>
@@ -1323,55 +1336,20 @@ Tesbih Sayacı</string>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="proBtnSmall" translatesAutoresizingMaskIntoConstraints="NO" id="mcG-hb-AWK">
                                 <rect key="frame" x="338" y="64" width="46" height="40"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="agH-Kl-sOs">
-                                <rect key="frame" x="0.0" y="537" width="414" height="260"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="surecell" id="fpV-93-m0n" customClass="SureTableViewCell" customModule="Namaz_Sureleri" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fpV-93-m0n" id="8cU-RO-PcB">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxd-Ui-3WN">
-                                                    <rect key="frame" x="40" y="11" width="334" height="21.5"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="wxd-Ui-3WN" secondAttribute="bottom" id="1G4-VE-1ED"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="wxd-Ui-3WN" secondAttribute="trailing" constant="20" id="FoJ-s0-d8N"/>
-                                                <constraint firstItem="wxd-Ui-3WN" firstAttribute="leading" secondItem="8cU-RO-PcB" secondAttribute="leadingMargin" constant="20" id="JwY-8B-R1k"/>
-                                                <constraint firstItem="wxd-Ui-3WN" firstAttribute="top" secondItem="8cU-RO-PcB" secondAttribute="topMargin" id="SBD-o6-FhD"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <outlet property="sureNameLbl" destination="wxd-Ui-3WN" id="tG1-90-uDF"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="D6c-ni-yHk">
-                                <rect key="frame" x="0.0" y="184" width="414" height="273"/>
+                                <rect key="frame" x="0.0" y="124" width="414" height="673"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="surecell2" id="O1O-v2-j8E" customClass="Sure2TableViewCell" customModule="Namaz_Sureleri" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O1O-v2-j8E" id="UtO-Bn-kx0">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83M-cS-tN4">
-                                                    <rect key="frame" x="40" y="11" width="354" height="21"/>
+                                                    <rect key="frame" x="40" y="11" width="354" height="21.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1393,52 +1371,22 @@ Tesbih Sayacı</string>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Namaz Sureleri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5E-rF-d0V">
-                                <rect key="frame" x="0.0" y="124" width="414" height="40"/>
-                                <color key="backgroundColor" red="0.40443909169999998" green="0.79550170899999995" blue="0.47837871310000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="vbJ-xr-5Co"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Namaz Duaları" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRZ-fM-wap">
-                                <rect key="frame" x="0.0" y="477" width="414" height="40"/>
-                                <color key="backgroundColor" red="0.40443909169999998" green="0.79550170899999995" blue="0.47837871310000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="2g6-tR-wda"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eGg-0G-EVK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="agH-Kl-sOs" firstAttribute="top" secondItem="cRZ-fM-wap" secondAttribute="bottom" constant="20" id="0go-zw-eIy"/>
                             <constraint firstItem="Z3j-kh-C6h" firstAttribute="leading" secondItem="eGg-0G-EVK" secondAttribute="leading" id="26u-re-lHK"/>
-                            <constraint firstItem="eGg-0G-EVK" firstAttribute="trailing" secondItem="x5E-rF-d0V" secondAttribute="trailing" id="5Nc-5S-myD"/>
+                            <constraint firstItem="eGg-0G-EVK" firstAttribute="bottom" secondItem="D6c-ni-yHk" secondAttribute="bottom" constant="65" id="59L-vu-tw4"/>
                             <constraint firstItem="pcE-Fy-VFH" firstAttribute="top" secondItem="eGg-0G-EVK" secondAttribute="top" constant="20" id="8m1-Lf-LTL"/>
-                            <constraint firstItem="eGg-0G-EVK" firstAttribute="trailing" secondItem="cRZ-fM-wap" secondAttribute="trailing" id="GOv-jm-iOh"/>
                             <constraint firstAttribute="bottom" secondItem="Z3j-kh-C6h" secondAttribute="bottom" id="H9m-We-fIm"/>
-                            <constraint firstItem="cRZ-fM-wap" firstAttribute="top" secondItem="D6c-ni-yHk" secondAttribute="bottom" constant="20" id="HDG-7J-hos"/>
-                            <constraint firstItem="D6c-ni-yHk" firstAttribute="top" secondItem="x5E-rF-d0V" secondAttribute="bottom" constant="20" id="ITH-kG-ZHL"/>
-                            <constraint firstItem="agH-Kl-sOs" firstAttribute="trailing" secondItem="eGg-0G-EVK" secondAttribute="trailing" id="MCM-Sq-1b2"/>
                             <constraint firstItem="eGg-0G-EVK" firstAttribute="trailing" secondItem="D6c-ni-yHk" secondAttribute="trailing" id="Rb9-or-jpG"/>
                             <constraint firstItem="eGg-0G-EVK" firstAttribute="trailing" secondItem="mcG-hb-AWK" secondAttribute="trailing" constant="30" id="Rpe-mP-Rws"/>
                             <constraint firstItem="mcG-hb-AWK" firstAttribute="top" secondItem="pcE-Fy-VFH" secondAttribute="top" id="SIb-Is-Cqj"/>
                             <constraint firstItem="Z3j-kh-C6h" firstAttribute="trailing" secondItem="eGg-0G-EVK" secondAttribute="trailing" id="WMa-2p-doR"/>
-                            <constraint firstItem="eGg-0G-EVK" firstAttribute="bottom" secondItem="agH-Kl-sOs" secondAttribute="bottom" constant="65" id="epf-GZ-j7Z"/>
-                            <constraint firstItem="agH-Kl-sOs" firstAttribute="height" secondItem="Z3j-kh-C6h" secondAttribute="height" multiplier="0.29" id="fbi-1Z-MFx"/>
                             <constraint firstItem="mcG-hb-AWK" firstAttribute="width" secondItem="pcE-Fy-VFH" secondAttribute="width" multiplier="1.15" id="kUH-a0-Ll9"/>
+                            <constraint firstItem="D6c-ni-yHk" firstAttribute="top" secondItem="pcE-Fy-VFH" secondAttribute="bottom" constant="20" id="kn1-3a-XmY"/>
                             <constraint firstItem="D6c-ni-yHk" firstAttribute="leading" secondItem="eGg-0G-EVK" secondAttribute="leading" id="ldl-Zm-BMJ"/>
                             <constraint firstItem="pcE-Fy-VFH" firstAttribute="leading" secondItem="eGg-0G-EVK" secondAttribute="leading" constant="30" id="m82-IH-jNX"/>
-                            <constraint firstItem="agH-Kl-sOs" firstAttribute="leading" secondItem="eGg-0G-EVK" secondAttribute="leading" id="oke-GU-3Ln"/>
-                            <constraint firstItem="x5E-rF-d0V" firstAttribute="leading" secondItem="eGg-0G-EVK" secondAttribute="leading" id="owh-8P-PUd"/>
-                            <constraint firstItem="cRZ-fM-wap" firstAttribute="leading" secondItem="eGg-0G-EVK" secondAttribute="leading" id="pXC-9m-4qp"/>
-                            <constraint firstItem="x5E-rF-d0V" firstAttribute="top" secondItem="pcE-Fy-VFH" secondAttribute="bottom" constant="20" id="qZk-u6-9Cy"/>
                             <constraint firstItem="mcG-hb-AWK" firstAttribute="bottom" secondItem="pcE-Fy-VFH" secondAttribute="bottom" id="qqy-6l-Zsn"/>
                             <constraint firstItem="Z3j-kh-C6h" firstAttribute="top" secondItem="Puf-5G-5VQ" secondAttribute="top" id="wMj-sO-jV2"/>
                         </constraints>
@@ -1447,13 +1395,8 @@ Tesbih Sayacı</string>
                         <outlet property="backButton" destination="pcE-Fy-VFH" id="WBt-jX-jbg"/>
                         <outlet property="backHeightConstant" destination="zQn-2D-HsJ" id="eM7-8F-Mxn"/>
                         <outlet property="backWidthConstant" destination="7cS-PA-WoC" id="cu7-a5-pxr"/>
-                        <outlet property="bottomNamazHeightCons" destination="2g6-tR-wda" id="a28-gt-2i2"/>
-                        <outlet property="bottomNamazLabel" destination="cRZ-fM-wap" id="D1n-z4-PgO"/>
-                        <outlet property="namazLabel" destination="x5E-rF-d0V" id="i5O-pa-Wod"/>
                         <outlet property="removeButton" destination="mcG-hb-AWK" id="LJB-GE-MKe"/>
-                        <outlet property="sureTable" destination="agH-Kl-sOs" id="pCW-Nj-w4P"/>
                         <outlet property="table2" destination="D6c-ni-yHk" id="XVl-98-l2J"/>
-                        <outlet property="topNamazheightCons" destination="vbJ-xr-5Co" id="1tz-ty-guQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBt-Y5-6kA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1557,6 +1500,7 @@ Tesbih Sayacı</string>
                         <outlet property="backHeightConstant" destination="WVv-iR-2AB" id="6P0-BX-FkK"/>
                         <outlet property="backWidthConstan" destination="JZ8-GY-EJV" id="s26-SX-6KV"/>
                         <outlet property="playButton" destination="XcZ-ux-G86" id="lAd-k4-eV6"/>
+                        <outlet property="playerBottomCons" destination="uGh-c9-I0h" id="d71-vh-3g0"/>
                         <outlet property="removeButton" destination="o4Z-Uo-NFd" id="ZYo-uE-Rc0"/>
                         <outlet property="textView" destination="7ay-3m-OB3" id="AlY-g0-Lze"/>
                     </connections>

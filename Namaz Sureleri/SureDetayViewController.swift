@@ -13,6 +13,7 @@ import StoreKit
 class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var textView: UITextView!
     
+    @IBOutlet weak var playerBottomCons: NSLayoutConstraint!
     @IBOutlet weak var backHeightConstant: NSLayoutConstraint!
     @IBOutlet weak var backWidthConstan: NSLayoutConstraint!
     @IBOutlet weak var audioSlider: UISlider!
@@ -69,6 +70,7 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
         
         if Utils.isPremium == "premium"{
             removeButton.isHidden = true
+            playerBottomCons.constant = 30
         }else{
             createAdd()
             removeButton.isHidden = false

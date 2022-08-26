@@ -10,8 +10,21 @@ import StoreKit
 import GoogleMobileAds
 
 class OtherAppsViewController: UIViewController {
-
+    @IBOutlet weak var midrightbottombottomcons: NSLayoutConstraint!
     
+    @IBOutlet weak var bottomrighttoptop: NSLayoutConstraint!
+    @IBOutlet weak var midrighttoptopcons: NSLayoutConstraint!
+    @IBOutlet weak var toprighttopcons: NSLayoutConstraint!
+    
+    @IBOutlet weak var bottomrightbottombottom: NSLayoutConstraint!
+    @IBOutlet weak var toprightBottomcons: NSLayoutConstraint!
+    @IBOutlet weak var toptopımagetop: NSLayoutConstraint!
+    @IBOutlet weak var topleftbottomcons: NSLayoutConstraint!
+    
+    @IBOutlet weak var bottomlefttoptop: NSLayoutConstraint!
+    @IBOutlet weak var bottomleftbottombottom: NSLayoutConstraint!
+    @IBOutlet weak var midlefttoptop: NSLayoutConstraint!
+    @IBOutlet weak var midleftbottombottom: NSLayoutConstraint!
     @IBOutlet weak var bottomleftdowntop: NSLayoutConstraint!
     @IBOutlet weak var bottomlefttraildown: NSLayoutConstraint!
     @IBOutlet weak var bottomleftdownlead: NSLayoutConstraint!
@@ -131,27 +144,42 @@ class OtherAppsViewController: UIViewController {
         arrangeShadowforViews(vieww: bottomRightView)
 
         if UIDevice.current.userInterfaceIdiom == .pad  {
+       
+            bottomlefttoptop.constant = 20
+            bottomleftbottombottom.constant = 20
+            
+            bottomrighttoptop.constant = 20
+            bottomrightbottombottom.constant = 20
+            midleftbottombottom.constant = 20
+            midlefttoptop.constant = 20
+            midrightbottombottomcons.constant = 20
+            midrighttoptopcons.constant = 20
+            toprighttopcons.constant = 20
+            toprightBottomcons.constant = 20
+            toptopımagetop.constant = 20
+            topleftbottomcons.constant = 20
+            
             backHeightCons.constant = 60
             backWidthCons.constant = 60
             topLeftLeadingConstant.constant = view.frame.width*0.1
             topRightTrailingConstant.constant = view.frame.width*0.1
             topRightWidthConstant.constant = 0.01
-            toprightdowntop.constant = 30
+            toprightdowntop.constant = 10
             toprightdownleading.constant = 30
             toprightdowntrailing.constant = 30
-            topleftdowntop.constant = 30
+            topleftdowntop.constant = 10
             topleftdownlead.constant = 30
             topleftdownlead.constant = 30
             middownlead.constant = 30
-            midlefttop.constant = 30
+            midlefttop.constant = 10
             midlefttrail.constant = 30
-            midrightdowntop.constant = 30
+            midrightdowntop.constant = 10
             midrightdownlead.constant = 30
             midrightdowntrail.constant = 30
-            bottomleftdowntop.constant = 30
+            bottomleftdowntop.constant = 10
             bottomleftdownlead.constant = 30
             bottomlefttraildown.constant = 30
-            bottomrightdowntop.constant = 30
+            bottomrightdowntop.constant = 10
             bottomrightlead.constant = 30
             bottomrighttrail.constant = 30
             

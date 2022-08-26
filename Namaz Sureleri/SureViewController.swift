@@ -10,12 +10,8 @@ import StoreKit
 import GoogleMobileAds
 
 class SureViewController: UIViewController {
-    @IBOutlet weak var sureTable: UITableView!
     
-    @IBOutlet weak var topNamazheightCons: NSLayoutConstraint!
-    @IBOutlet weak var bottomNamazHeightCons: NSLayoutConstraint!
-    @IBOutlet weak var bottomNamazLabel: UILabel!
-    @IBOutlet weak var namazLabel: UILabel!
+
     @IBOutlet weak var table2: UITableView!
     @IBOutlet weak var backHeightConstant: NSLayoutConstraint!
     @IBOutlet weak var backWidthConstant: NSLayoutConstraint!
@@ -29,10 +25,10 @@ class SureViewController: UIViewController {
     }
     var bannerView: GADBannerView!
     private var interstitial: GADInterstitialAd?
+    var allduas = Utils.alldua
     override func viewDidLoad() {
         super.viewDidLoad()
-        sureTable.delegate = self
-        sureTable.dataSource = self
+        
         table2.delegate = self
         table2.dataSource = self
         setupUi()
@@ -40,22 +36,22 @@ class SureViewController: UIViewController {
         backButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backButtonTapped)))
         removeButton.isUserInteractionEnabled = true
         removeButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(removeButtonTapped)))
-        sureTable.layer.cornerRadius = 20
-        namazLabel.font = namazLabel.font!.withSize(UIScreen.main.bounds.size.height*0.02)
-        bottomNamazLabel.font = bottomNamazLabel.font!.withSize(UIScreen.main.bounds.size.height*0.02)
-        namazLabel.layer.cornerRadius = 10
-        bottomNamazLabel.layer.cornerRadius = 10
+//        sureTable.layer.cornerRadius = 20
+//        namazLabel.font = namazLabel.font!.withSize(UIScreen.main.bounds.size.height*0.02)
+//        bottomNamazLabel.font = bottomNamazLabel.font!.withSize(UIScreen.main.bounds.size.height*0.02)
+//        namazLabel.layer.cornerRadius = 10
+//        bottomNamazLabel.layer.cornerRadius = 10
 
         if view.frame.height < 715 {
-            namazLabel.font = namazLabel.font!.withSize(UIScreen.main.bounds.size.height*0.025)
-            bottomNamazLabel.font = bottomNamazLabel.font!.withSize(UIScreen.main.bounds.size.height*0.025)
+//            namazLabel.font = namazLabel.font!.withSize(UIScreen.main.bounds.size.height*0.025)
+//            bottomNamazLabel.font = bottomNamazLabel.font!.withSize(UIScreen.main.bounds.size.height*0.025)
         }
 //        arrangeShadowforViews(vieww: sureTable)
         if UIDevice.current.userInterfaceIdiom == .pad  {
             backHeightConstant.constant = 60
             backWidthConstant.constant = 60
-            bottomNamazHeightCons.constant = 60
-            topNamazheightCons.constant = 60
+//            bottomNamazHeightCons.constant = 60
+//            topNamazheightCons.constant = 60
 
         }
             }
@@ -134,37 +130,27 @@ class SureViewController: UIViewController {
 }
 extension SureViewController: UITableViewDelegate, UITableViewDataSource {
   
- 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        allduas.count
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == sureTable{
-            return 6
-        }else{
-            return 13
+        guard let numbersdua = allduas[section]["value"] as? [String] else{
+            return 0
         }
-        Utils.sureİsimleri.count
+        return numbersdua.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if tableView == sureTable{
+//        if tableView == sureTable{
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "surecell", for: indexPath) as! SureTableViewCell
-        cell.sureNameLbl.text = Utils.sureİsimleri[indexPath.row]
-            if view.frame.height < 715 {
-                cell.sureNameLbl.font = cell.sureNameLbl.font!.withSize(UIScreen.main.bounds.size.height*0.025)
-
-            }else{
-        cell.sureNameLbl.font = cell.sureNameLbl.font!.withSize(UIScreen.main.bounds.size.height*0.02)
-            }
-            if cell.isSelected {
-                tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
-             } else {
-                tableView.deselectRow(at: indexPath, animated: true)
-             }
-            cell.selectionStyle = .default;
+        let cell = tableView.dequeueReusableCell(withIdentifier: "surecell2", for: indexPath) as! Sure2TableViewCell
+        
+        guard let names = allduas[indexPath.section]["value"] as? [String] else{
             return cell
-
-        }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "surecell2", for: indexPath) as! Sure2TableViewCell
-            cell.label2.text = Utils.sureİsimleri[indexPath.row+6]
+        }
+        
+        
+        cell.label2.text = names[indexPath.row]
+        
             if view.frame.height < 715 {
                 cell.label2.font = cell.label2.font!.withSize(UIScreen.main.bounds.size.height*0.025)
 
@@ -179,24 +165,58 @@ extension SureViewController: UITableViewDelegate, UITableViewDataSource {
             cell.selectionStyle = .default;
             return cell
 
-        }
+//        }else{
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "surecell2", for: indexPath) as! Sure2TableViewCell
+//            cell.label2.text = Utils.sureİsimleri[indexPath.row+6]
+//            if view.frame.height < 715 {
+//                cell.label2.font = cell.label2.font!.withSize(UIScreen.main.bounds.size.height*0.025)
+//
+//            }else{
+//        cell.label2.font = cell.label2.font!.withSize(UIScreen.main.bounds.size.height*0.02)
+//            }
+//            if cell.isSelected {
+//                tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+//             } else {
+//                tableView.deselectRow(at: indexPath, animated: true)
+//             }
+//            cell.selectionStyle = .default;
+//            return cell
+//
+//        }
 //        cell.sureNameLbl.textColor = UIColor(red: 38/255, green: 51/255, blue: 117/255, alpha: 1)
         
     }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 30.0, y: 0.0, width: view.frame.width-30, height: 50))
+        view.backgroundColor = UIColor(red: 103/255, green: 203/255, blue: 122/255, alpha: 1)
+        let title = UILabel(frame: view.frame)
+        title.textColor = .white
+        title.text = allduas[section]["title"] as! String
+        title.font = title.font!.withSize(UIScreen.main.bounds.size.height*0.02)
+
+        view.addSubview(title)
+        return view
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad  {
+            return 60
+
+        }else{
+            return 50
+
+        }
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        if UIDevice.current.userInterfaceIdiom == .pad  {
+            return 60
+
+        }else{
+            return 50
+
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView == sureTable{
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-                    tableView.deselectRow(at: indexPath, animated: true)
-                }
-        let destinationVC = storyboard?.instantiateViewController(withIdentifier: "SureDetayViewController") as! SureDetayViewController
-        destinationVC.modalPresentationStyle = .fullScreen
-        destinationVC.index = indexPath.row
-        self.present(destinationVC, animated: true, completion: nil)
-        }else{
+      
            
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
@@ -204,9 +224,9 @@ extension SureViewController: UITableViewDelegate, UITableViewDataSource {
                     }
             let destinationVC = storyboard?.instantiateViewController(withIdentifier: "SureDetayViewController") as! SureDetayViewController
             destinationVC.modalPresentationStyle = .fullScreen
-            destinationVC.index = indexPath.row+6
+            destinationVC.index = indexPath.row
             self.present(destinationVC, animated: true, completion: nil)
-        }
+        
     }
     
     

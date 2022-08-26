@@ -129,6 +129,11 @@ class ViewController: UIViewController {
         if Utils.isPremium == "premium"{
             removeView.isHidden = true
             removeBackView.isHidden = true
+            topHeightConstant.constant = view.frame.height*0.022
+            if UIDevice.current.userInterfaceIdiom == .pad  {
+                topHeightConstant.constant = view.frame.height*0.04
+
+            }
         }else{
             createAdd()
             removeView.isHidden = false

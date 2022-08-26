@@ -23,6 +23,7 @@ class AdhanViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     @IBOutlet weak var removeView: UIImageView!
     
+    @IBOutlet weak var adhanBottomCons: NSLayoutConstraint!
     @IBOutlet weak var backWidthCons: NSLayoutConstraint!
     
     @IBOutlet weak var stackView: UIStackView!
@@ -81,6 +82,7 @@ class AdhanViewController: UIViewController, CLLocationManagerDelegate {
             backWidthCons.constant = 60
             viewLeadingConstant.constant = 200
             viewTrailingCons.constant = 200
+            adhanBottomCons.constant = 200
         }
     }
     

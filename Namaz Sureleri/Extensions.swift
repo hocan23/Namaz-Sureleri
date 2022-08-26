@@ -16,7 +16,11 @@ class Utils{
     static var isPremium : String?
     static var isFirstOpen = true
     static var sureIcerigi = [String]()
+    static var alldua  = [Dictionary<String,Any>]()
     static var sureİsimleri  = [String]()
+    static var duaİsimleri  = [String]()
+
+
     static var soundtag = [String]()
     
     static var sureMetin = ["RABBENA ATİNA VE RABBENAĞFİRLİ\n\nRabbenâ âtina fid'dunyâ haseneten ve fil'âhirati haseneten ve kınâ azâbennâr. Rabbenâğfirlî ve li-vâlideyye ve lil-Mu'minine yevme yekûmu'l hisâb.\n\nRABBENA ATİNA VE RABBENAĞFİRLİ ANLAMI\n\nAllah'ım! Bize dünyada iyilik ve güzellik, ahirette de iyilik, güzellik ver. Bizi ateş azabından koru.\nEy bizim Rabbimiz! Beni, anamı ve babamı ve bütün mü'minleri hesap gününde (herkesin sorguya çekileceği günde) bağışla.","KUNUT DUALARI\n\n1- Allâhumme innâ nesteînuke ve nestağfiruke ve nestehdik. Ve nu'minu bike ve netûbu ileyk. Ve netevekkelu aleyke ve nusni aleykel-hayra kullehu neşkuruke ve lâ nekfuruke ve nahleu ve netruku men yefcuruk\n2- Allâhumme iyyâke na'budu ve leke nusalli ve nescudu ve ileyke nes'a ve nahfidu nercû rahmeteke ve nahşâ azâbeke inne azâbeke bilkuffâri mulhık\n\nKUNUT DUALARI ANLAMI\n\n1- Allahım! Senden yardım isteriz, günahlarımızı bağışlamanı isteriz, razı olduğun şeylere hidayet etmeni isteriz. Sana inanırız, sana tevbe ederiz. Sana güveniriz. Bize verdiğin bütün nimetleri bilerek seni hayır ile överiz. Sana şükrederiz. Hiçbir nimetini inkar etmez ve onları başkasından bilmeyiz. Nimetlerini inkar eden ve sana karşı geleni bırakırız.\n2- Allahım! Biz yalnız sana kulluk ederiz. Namazı yalnız senin için kılarız, ancak sana secde ederiz. Yalnız sana koşar ve sana yaklaştıracak şeyleri kazanmaya çalışırız. İbadetlerini sevinçle yaparız. Rahmetinin devamını ve çoğalmasını dileriz. Azabından korkarız, şüphesiz senin azabın kafirlere ve inançsızlara ulaşır."]
@@ -76,12 +80,12 @@ class Utils{
     sureIcerigi.append("ASR SURESİ\n \nBismillâhi’r-Rahmâni’r-Rahîm.\n \n1- Vel'asr.\n \n2- İnnel'insâne lefî husr.\n \n3- İllellezîne âmenû ve amilûssâlihâti vetevâ savbilhakkı vetevâ savbissabr.\n \nASR SURESİNİN ANLAMI\n \nRahmân ve Rahîm olan Allah’ın adıyla.\n \n1- Asr´a yemin olsun ki,\n \n2- insan mutlaka bir ziyandadır.\n \n3- Ancak iman edenler, salih amel (iyi işler) işleyenler, birbirlerine hakkı tavsiye eden ve sabrı tavsiye edenler bunun dışındadır")
     
         
-        sureİsimleri.append("Sübhaneke Duası")
-        sureİsimleri.append("Ettehiyatu Duası")
-        sureİsimleri.append("Allahümme Salli Duası")
-        sureİsimleri.append("Allahümme Barik Duası")
-        sureİsimleri.append("Rabbena Atina Ve Rabbenağfirli Duası")
-        sureİsimleri.append("Konut Duası")
+       duaİsimleri.append("Sübhaneke Duası")
+        duaİsimleri.append("Ettehiyatu Duası")
+        duaİsimleri.append("Allahümme Salli Duası")
+        duaİsimleri.append("Allahümme Barik Duası")
+        duaİsimleri.append("Rabbena Atina Ve Rabbenağfirli Duası")
+        duaİsimleri.append("Konut Duası")
 
         
         
@@ -101,6 +105,11 @@ class Utils{
     sureİsimleri.append("Amenerrasulü")
     sureİsimleri.append("Asr Suresi")
     
+        
+        
+        alldua.append(["title":"Namaz Sureleri", "value":sureİsimleri])
+        alldua.append(["title":"Namaz Duaları", "value":duaİsimleri])
+
         soundtag.append("Sübhaneke Duası")
         soundtag.append("Ettehiyyatü Duası")
 

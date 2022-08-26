@@ -22,6 +22,7 @@ class HadisViewController: UIViewController,UITableViewDataSource, UITableViewDe
     @IBOutlet weak var removeButtonView: UIImageView!
     @IBOutlet weak var backButtonView: UIImageView!
     
+    @IBOutlet weak var tableBottomCons: NSLayoutConstraint!
     let animationView = AnimationView()
     
     var models = [SKProduct]()
@@ -67,9 +68,10 @@ class HadisViewController: UIViewController,UITableViewDataSource, UITableViewDe
             self.dismiss(animated: true)
             
         }
-        
+        print(Utils.isPremium)
         if Utils.isPremium == "premium"{
             removeButtonView.isHidden = true
+            tableBottomCons.constant = 0
         }else{
             createAdd()
             removeButtonView.isHidden = false
@@ -177,8 +179,8 @@ class HadisViewController: UIViewController,UITableViewDataSource, UITableViewDe
   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) ->CGFloat {
       
-        return 190
-        
+        return UITableView.automaticDimension
+
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension

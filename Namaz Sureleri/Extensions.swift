@@ -33,13 +33,7 @@ class Utils{
     
     
     static func addSure (){
-        sureIcerigi.append("SÜBHANEKE DUASI \n\nSubhânekellâhumme ve bi hamdik ve tebârakesmuk ve teâlâ cedduk ve lâ ilâhe ğayruk. \n\nSÜBHANEKE ANLAMI \n\nAllah'ım! Sen eksik sıfatlardan pak ve uzaksın. Seni daima böyle tenzih eder ve överim. Senin adın mübarektir. Varlığın her şeyden üstündür. Senden başka ilah yoktur.")
-        
-        sureIcerigi.append("ETTEHİYATU DUASI \n\nEttehiyyâtu lillâhi vessalevâtu vettayibât. Esselâmu aleyke eyyuhen-Nebiyyu ve rahmetullahi ve berakâtuhu. Esselâmu aleynâ ve alâ ibâdillâhis-Sâlihîn. Eşhedu en lâ ilâhe illallâh ve eşhedu enne Muhammeden abduhû ve Rasuluh.\n\nETTEHİYATU DUASI ANLAMI \n\nDil ile, beden ve mal ile yapılan bütün ibadetler Allah'a dır. Ey Peygamber! Allah'ın selamı, rahmet ve bereketleri senin üzerine olsun. Selam bizim üzerimize ve Allah'ın bütün iyi kulları üzerine olsun. Şahitlik ederim ki, Allah'tan başka ilah yoktur. Yine şahitlik ederim ki, Muhammed, O'nun kulu ve elçisidir.")
-        sureIcerigi.append("ALLAHUMME SALLİ DUASI \n\nAllâhumme salli alâ Muhammedin ve alâ âli Muhammed. Kemâ salleyte alâ İbrahime ve alâ âli İbrahim. İnneke hamidun mecîd.\n\nALLAHUMME SALLİ DUASI ANLAMI\n\nAllah'ım! Muhammed'e ve Muhammed'in ümmetine rahmet eyle; şerefini yücelt. İbrahim'e ve İbrahim'in ümmetine rahmet ettiğin gibi. Şüphesiz övülmeye layık yalnız sensin, şan ve şeref sahibi de sensin.")
-        sureIcerigi.append("ALLAHUMME BARİK DUASI\n\nAllâhumme barik alâ Muhammedin ve alâ âli Muhammed. Kemâ barekte alâ İbrahîme ve alâ âli İbrahim. İnneke hamidun mecîd\nALLAHUMME BARİK DUASI ANLAMI\n\nAllah'ım! Muhammed'e ve Muhammed'in ümmetine hayır ve bereket ver. İbrahim'e ve İbrahim'in ümmetine verdiğin gibi. Şüphesiz övülmeye layık yalnız sensin, şan ve şeref sahibi de sensin.")
-        sureIcerigi.append("RABBENA ATİNA VE RABBENAĞFİRLİ\n\nRabbenâ âtina fid'dunyâ haseneten ve fil'âhirati haseneten ve kınâ azâbennâr. Rabbenâğfirlî ve li-vâlideyye ve lil-Mu'minine yevme yekûmu'l hisâb.\n\nRABBENA ATİNA VE RABBENAĞFİRLİ ANLAMI\n\nAllah'ım! Bize dünyada iyilik ve güzellik, ahirette de iyilik, güzellik ver. Bizi ateş azabından koru.\nEy bizim Rabbimiz! Beni, anamı ve babamı ve bütün mü'minleri hesap gününde (herkesin sorguya çekileceği günde) bağışla.")
-        sureIcerigi.append("KUNUT DUALARI\n\n1- Allâhumme innâ nesteînuke ve nestağfiruke ve nestehdik. Ve nu'minu bike ve netûbu ileyk. Ve netevekkelu aleyke ve nusni aleykel-hayra kullehu neşkuruke ve lâ nekfuruke ve nahleu ve netruku men yefcuruk\n2- Allâhumme iyyâke na'budu ve leke nusalli ve nescudu ve ileyke nes'a ve nahfidu nercû rahmeteke ve nahşâ azâbeke inne azâbeke bilkuffâri mulhık\n\nKUNUT DUALARI ANLAMI\n\n1- Allahım! Senden yardım isteriz, günahlarımızı bağışlamanı isteriz, razı olduğun şeylere hidayet etmeni isteriz. Sana inanırız, sana tevbe ederiz. Sana güveniriz. Bize verdiğin bütün nimetleri bilerek seni hayır ile överiz. Sana şükrederiz. Hiçbir nimetini inkar etmez ve onları başkasından bilmeyiz. Nimetlerini inkar eden ve sana karşı geleni bırakırız.\n2- Allahım! Biz yalnız sana kulluk ederiz. Namazı yalnız senin için kılarız, ancak sana secde ederiz. Yalnız sana koşar ve sana yaklaştıracak şeyleri kazanmaya çalışırız. İbadetlerini sevinçle yaparız. Rahmetinin devamını ve çoğalmasını dileriz. Azabından korkarız, şüphesiz senin azabın kafirlere ve inançsızlara ulaşır.")
+       
     sureIcerigi.append("FATİHA SURESİ\n \n1- Bismillâhi’r-Rahmâni’r-Rahîm.\n \n2- Elhamdulillâhi Rabbi’l-âlemîn.\n \n3- Er-Rahmâni’r-Rahîm.\n \n4- Mâliki yevmi’d-dîn.\n \n5- İyyâke na’budu ve iyyâke neste’în.\n \n6- İhdine’s-sırâta’l-mustakîm.\n \n7- Sırâta’l-lezîne en’amte aleyhim. Ğayri’l-meğdûbi aleyhim ve le’d-dâllîn.\n \n FATİHA SURESİNİN ANLAMI\n \n1- Rahmân ve Rahîm olan Allah’ın adıyla.\n \n2- Hamd; Âlemlerin Rabbi olan Allah’a aittir.\n \n3- (O Allah) Rahmân ve Rahîm’dir.\n \n4- Din (ödül ve ceza) gününün sahibidir.\n \n5- (Ey Allah’ım) Biz yalnızca Sana ibadet eder ve yalnızca Sen’den yardım dileriz.\n \n6- Bizi dosdoğru yola ilet.\n \n7- Kendilerine nimet verdiğin kimselerin yoluna ilet, gazaba uğrayanların ve sapıkların yoluna değil.\n")
     
     sureIcerigi.append("FİL SURESİ\n  \nBismillâhi’r-Rahmâni’r-Rahîm.\n \n1- “Elemtera keyfe fe’ale Rabbuke bi-ashâbi’l-fîl.\n \n2- Elem yec’al keydehum fî tadlîl.\n \n3- Ve ersele ’aleyhim tayran ebâbîl.\n \n4- Termîhim bi-hicâratin min siccîl.\n \n5- Fece’alehum ke’asfin me’kûl.\n \nFİL SURESİ ANLAMI\n \nRahmân ve Rahîm olan Allah’ın adıyla.\n \n1- “Rabbin fil sahiplerine neler etti, görmedin mi?\n \n2- Onların kötü planlarını boşa çıkarmadı mı?\n \n3- Onların üstüne ebabil kuşları gönderdi.\n \n4- O kuşlar, onların üzerlerine pişkin tuğladan yapılmış taşlar atıyordu.\n \n5- Böylece Allah onları yenilip çiğnenmiş ekine çevirdi.")
@@ -79,14 +73,14 @@ class Utils{
     
     sureIcerigi.append("ASR SURESİ\n \nBismillâhi’r-Rahmâni’r-Rahîm.\n \n1- Vel'asr.\n \n2- İnnel'insâne lefî husr.\n \n3- İllellezîne âmenû ve amilûssâlihâti vetevâ savbilhakkı vetevâ savbissabr.\n \nASR SURESİNİN ANLAMI\n \nRahmân ve Rahîm olan Allah’ın adıyla.\n \n1- Asr´a yemin olsun ki,\n \n2- insan mutlaka bir ziyandadır.\n \n3- Ancak iman edenler, salih amel (iyi işler) işleyenler, birbirlerine hakkı tavsiye eden ve sabrı tavsiye edenler bunun dışındadır")
     
+        sureIcerigi.append("SÜBHANEKE DUASI \n\nSubhânekellâhumme ve bi hamdik ve tebârakesmuk ve teâlâ cedduk ve lâ ilâhe ğayruk. \n\nSÜBHANEKE ANLAMI \n\nAllah'ım! Sen eksik sıfatlardan pak ve uzaksın. Seni daima böyle tenzih eder ve överim. Senin adın mübarektir. Varlığın her şeyden üstündür. Senden başka ilah yoktur.")
         
-       duaİsimleri.append("Sübhaneke Duası")
-        duaİsimleri.append("Ettehiyatu Duası")
-        duaİsimleri.append("Allahümme Salli Duası")
-        duaİsimleri.append("Allahümme Barik Duası")
-        duaİsimleri.append("Rabbena Atina Ve Rabbenağfirli Duası")
-        duaİsimleri.append("Konut Duası")
-
+        sureIcerigi.append("ETTEHİYATU DUASI \n\nEttehiyyâtu lillâhi vessalevâtu vettayibât. Esselâmu aleyke eyyuhen-Nebiyyu ve rahmetullahi ve berakâtuhu. Esselâmu aleynâ ve alâ ibâdillâhis-Sâlihîn. Eşhedu en lâ ilâhe illallâh ve eşhedu enne Muhammeden abduhû ve Rasuluh.\n\nETTEHİYATU DUASI ANLAMI \n\nDil ile, beden ve mal ile yapılan bütün ibadetler Allah'a dır. Ey Peygamber! Allah'ın selamı, rahmet ve bereketleri senin üzerine olsun. Selam bizim üzerimize ve Allah'ın bütün iyi kulları üzerine olsun. Şahitlik ederim ki, Allah'tan başka ilah yoktur. Yine şahitlik ederim ki, Muhammed, O'nun kulu ve elçisidir.")
+        sureIcerigi.append("ALLAHUMME SALLİ DUASI \n\nAllâhumme salli alâ Muhammedin ve alâ âli Muhammed. Kemâ salleyte alâ İbrahime ve alâ âli İbrahim. İnneke hamidun mecîd.\n\nALLAHUMME SALLİ DUASI ANLAMI\n\nAllah'ım! Muhammed'e ve Muhammed'in ümmetine rahmet eyle; şerefini yücelt. İbrahim'e ve İbrahim'in ümmetine rahmet ettiğin gibi. Şüphesiz övülmeye layık yalnız sensin, şan ve şeref sahibi de sensin.")
+        sureIcerigi.append("ALLAHUMME BARİK DUASI\n\nAllâhumme barik alâ Muhammedin ve alâ âli Muhammed. Kemâ barekte alâ İbrahîme ve alâ âli İbrahim. İnneke hamidun mecîd\nALLAHUMME BARİK DUASI ANLAMI\n\nAllah'ım! Muhammed'e ve Muhammed'in ümmetine hayır ve bereket ver. İbrahim'e ve İbrahim'in ümmetine verdiğin gibi. Şüphesiz övülmeye layık yalnız sensin, şan ve şeref sahibi de sensin.")
+        sureIcerigi.append("RABBENA ATİNA VE RABBENAĞFİRLİ\n\nRabbenâ âtina fid'dunyâ haseneten ve fil'âhirati haseneten ve kınâ azâbennâr. Rabbenâğfirlî ve li-vâlideyye ve lil-Mu'minine yevme yekûmu'l hisâb.\n\nRABBENA ATİNA VE RABBENAĞFİRLİ ANLAMI\n\nAllah'ım! Bize dünyada iyilik ve güzellik, ahirette de iyilik, güzellik ver. Bizi ateş azabından koru.\nEy bizim Rabbimiz! Beni, anamı ve babamı ve bütün mü'minleri hesap gününde (herkesin sorguya çekileceği günde) bağışla.")
+        sureIcerigi.append("KUNUT DUALARI\n\n1- Allâhumme innâ nesteînuke ve nestağfiruke ve nestehdik. Ve nu'minu bike ve netûbu ileyk. Ve netevekkelu aleyke ve nusni aleykel-hayra kullehu neşkuruke ve lâ nekfuruke ve nahleu ve netruku men yefcuruk\n2- Allâhumme iyyâke na'budu ve leke nusalli ve nescudu ve ileyke nes'a ve nahfidu nercû rahmeteke ve nahşâ azâbeke inne azâbeke bilkuffâri mulhık\n\nKUNUT DUALARI ANLAMI\n\n1- Allahım! Senden yardım isteriz, günahlarımızı bağışlamanı isteriz, razı olduğun şeylere hidayet etmeni isteriz. Sana inanırız, sana tevbe ederiz. Sana güveniriz. Bize verdiğin bütün nimetleri bilerek seni hayır ile överiz. Sana şükrederiz. Hiçbir nimetini inkar etmez ve onları başkasından bilmeyiz. Nimetlerini inkar eden ve sana karşı geleni bırakırız.\n2- Allahım! Biz yalnız sana kulluk ederiz. Namazı yalnız senin için kılarız, ancak sana secde ederiz. Yalnız sana koşar ve sana yaklaştıracak şeyleri kazanmaya çalışırız. İbadetlerini sevinçle yaparız. Rahmetinin devamını ve çoğalmasını dileriz. Azabından korkarız, şüphesiz senin azabın kafirlere ve inançsızlara ulaşır.")
+       
         
         
         
@@ -104,21 +98,20 @@ class Utils{
     sureİsimleri.append("Ayet-el Kürsi")
     sureİsimleri.append("Amenerrasulü")
     sureİsimleri.append("Asr Suresi")
-    
+        duaİsimleri.append("Sübhaneke Duası")
+         duaİsimleri.append("Ettehiyatu Duası")
+         duaİsimleri.append("Allahümme Salli Duası")
+         duaİsimleri.append("Allahümme Barik Duası")
+         duaİsimleri.append("Rabbena Atina Ve Rabbenağfirli Duası")
+         duaİsimleri.append("Konut Duası")
+
         
         
         alldua.append(["title":"Namaz Sureleri", "value":sureİsimleri])
         alldua.append(["title":"Namaz Duaları", "value":duaİsimleri])
 
-        soundtag.append("Sübhaneke Duası")
-        soundtag.append("Ettehiyyatü Duası")
-
         
-        soundtag.append("Allahümme Salli Duası")
-        soundtag.append("Allahumme Barik Duası")
-        soundtag.append("Rabbenâ Duaları")
-      
-        soundtag.append("Kunut Duaları")
+       
 
         
         
@@ -137,6 +130,14 @@ class Utils{
     soundtag.append("ayetelkürsi")
     soundtag.append("amenerrasulü")
     soundtag.append("asr")
+        soundtag.append("Sübhaneke Duası")
+        soundtag.append("Ettehiyyatü Duası")
+
+        soundtag.append("Allahümme Salli Duası")
+        soundtag.append("Allahumme Barik Duası")
+        soundtag.append("Rabbenâ Duaları")
+      
+        soundtag.append("Kunut Duaları")
     
     }
     

@@ -109,7 +109,7 @@ class NamazViewController: UIViewController {
             namazView.image = UIImage(named: "abdest\(index)")
             namazTextView.text = Utils.abdestText[index-1]
         }
-        namazTextView.font = namazTextView.font!.withSize(UIScreen.main.bounds.size.height*0.025)
+        namazTextView.font = namazTextView.font!.withSize(UIScreen.main.bounds.size.height*0.022)
         
         
         if UIDevice.current.userInterfaceIdiom == .pad  {

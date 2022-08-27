@@ -131,12 +131,14 @@ class SureViewController: UIViewController {
 extension SureViewController: UITableViewDelegate, UITableViewDataSource {
   
     func numberOfSections(in tableView: UITableView) -> Int {
-        allduas.count
+        return allduas.count
+        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let numbersdua = allduas[section]["value"] as? [String] else{
             return 0
         }
+        print(numbersdua.count)
         return numbersdua.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -224,7 +226,9 @@ extension SureViewController: UITableViewDelegate, UITableViewDataSource {
                     }
             let destinationVC = storyboard?.instantiateViewController(withIdentifier: "SureDetayViewController") as! SureDetayViewController
             destinationVC.modalPresentationStyle = .fullScreen
-            destinationVC.index = indexPath.row
+        print(indexPath)
+        destinationVC.index = indexPath.section*14 + indexPath.row
+        
             self.present(destinationVC, animated: true, completion: nil)
         
     }

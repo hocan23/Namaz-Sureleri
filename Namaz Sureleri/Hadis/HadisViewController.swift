@@ -56,11 +56,7 @@ class HadisViewController: UIViewController,UITableViewDataSource, UITableViewDe
             tableTrailingCons.constant = 100
         }
         // Do any additional setup after loading the view. bannerView = GADBannerView(adSize: GADAdSizeBanner)
-        bannerView = GADBannerView(adSize: GADAdSizeBanner)
-        bannerView.adUnitID = Utils.bannerId
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-        bannerView.delegate = self
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {

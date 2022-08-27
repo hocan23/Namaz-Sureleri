@@ -65,11 +65,7 @@ class AdhanViewController: UIViewController, CLLocationManagerDelegate {
         adhanView1.layer.masksToBounds = true
         adhanView1.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
-        bannerView = GADBannerView(adSize: GADAdSizeBanner)
-        bannerView.adUnitID = Utils.bannerId
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-        bannerView.delegate = self
+       
         locationManager.delegate = self
         removeView.isUserInteractionEnabled = true
         removeView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(removeViewTapped)))
@@ -82,7 +78,7 @@ class AdhanViewController: UIViewController, CLLocationManagerDelegate {
             backWidthCons.constant = 60
             viewLeadingConstant.constant = 200
             viewTrailingCons.constant = 200
-            adhanBottomCons.constant = 200
+            adhanBottomCons.constant = 150
         }
     }
     

@@ -67,7 +67,6 @@ class HadisViewController: UIViewController,UITableViewDataSource, UITableViewDe
         print(Utils.isPremium)
         if Utils.isPremium == "premium"{
             removeButtonView.isHidden = true
-            bannerView.isHidden = true
             tableBottomCons.constant = 0
         }else{
             createAdd()

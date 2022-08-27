@@ -124,14 +124,14 @@ class ViewController: UIViewController {
 
 
     }
-    override func viewDidAppear(_ animated: Bool) {
-        if Utils.isPremium == "premium"{
-            bannerView.isHidden = true
-            removeView.isHidden = true
-            removeBackView.isHidden = true
-            
-        }
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        if Utils.isPremium == "premium"{
+//            bannerView.isHidden = true
+//            removeView.isHidden = true
+//            removeBackView.isHidden = true
+//            
+//        }
+//    }
     override func viewWillAppear(_ animated: Bool) {
         if Utils.isPremium == "premium"{
             removeView.isHidden = true

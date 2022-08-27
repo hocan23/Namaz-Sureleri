@@ -93,6 +93,8 @@ class SettingsViewController: UIViewController{
     }
     @objc func exitTapped (){
         homeView.zoomIn()
+        if Utils.isPremium != "premium"{
+
         if interstitial != nil {
             interstitial?.present(fromRootViewController: self)
             isAd = true
@@ -101,8 +103,11 @@ class SettingsViewController: UIViewController{
             print("Ad wasn't ready")
             self.dismiss(animated: true)
         }
+        }else{
+            self.dismiss(animated: true)
+
+        }
     }
-    
 }
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -192,7 +197,7 @@ extension SettingsViewController: SKProductsRequestDelegate, SKPaymentTransactio
                 SKPaymentQueue.default().finishTransaction(transaction)
                 Utils.saveLocal(array: "premium", key: "purchase")
                 Utils.isPremium = "premium"
-
+                bannerView.isHidden = true
             case .failed:
                 SKPaymentQueue.default().finishTransaction(transaction)
                 
@@ -200,6 +205,7 @@ extension SettingsViewController: SKProductsRequestDelegate, SKPaymentTransactio
                 print("restore")
                 Utils.saveLocal(array: "premium", key: "purchase")
                 Utils.isPremium = "premium"
+                bannerView.isHidden = true
             case .deferred:
                 print("deffered")
             default: break

@@ -258,6 +258,7 @@ class NamazViewController: UIViewController {
     
     @objc func backButtonTapped(){
         backButton.zoomIn()
+        if Utils.isPremium != "premium"{
 
         if interstitial != nil {
             interstitial?.present(fromRootViewController: self)
@@ -267,8 +268,11 @@ class NamazViewController: UIViewController {
             self.dismiss(animated: true)
         }
         
+        }else{
+            self.dismiss(animated: true)
+
+        }
     }
-    
 
 }
 extension NamazViewController: SKProductsRequestDelegate, SKPaymentTransactionObserver{
@@ -297,13 +301,15 @@ extension NamazViewController: SKProductsRequestDelegate, SKPaymentTransactionOb
                 SKPaymentQueue.default().finishTransaction(transaction)
                 Utils.saveLocal(array: "premium", key: "purchase")
                 Utils.isPremium = "premium"
-
+                removeView.isHidden = true
+                bannerView.isHidden = true
             case .failed:
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .restored:
                 Utils.saveLocal(array: "premium", key: "purchase")
                 Utils.isPremium = "premium"
-
+                removeView.isHidden = true
+                bannerView.isHidden = true
                 print("restore")
             case .deferred:
                 print("deffered")

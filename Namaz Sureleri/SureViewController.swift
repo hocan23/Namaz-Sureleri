@@ -99,7 +99,7 @@ class SureViewController: UIViewController {
     
     @objc func backButtonTapped(){
         backButton.zoomIn()
-
+        if Utils.isPremium != "premium"{
         if interstitial != nil {
             if isSeenAd == false{
             interstitial?.present(fromRootViewController: self)
@@ -112,8 +112,11 @@ class SureViewController: UIViewController {
             print("Ad wasn't ready")
             self.dismiss(animated: true)
         }
+        }else{
+            self.dismiss(animated: true)
+
+        }
     }
-    
     @objc func removeButtonTapped(){
         removeButton.zoomIn()
 
@@ -260,7 +263,8 @@ extension SureViewController: SKProductsRequestDelegate, SKPaymentTransactionObs
                 SKPaymentQueue.default().finishTransaction(transaction)
                 Utils.saveLocal(array: "premium", key: "purchase")
                 Utils.isPremium = "premium"
-
+                removeButton.isHidden = true
+                bannerView.isHidden = true
             case .failed:
                 SKPaymentQueue.default().finishTransaction(transaction)
                 
@@ -268,6 +272,8 @@ extension SureViewController: SKProductsRequestDelegate, SKPaymentTransactionObs
                 print("restore")
                 Utils.saveLocal(array: "premium", key: "purchase")
                 Utils.isPremium = "premium"
+                removeButton.isHidden = true
+                bannerView.isHidden = true
             case .deferred:
                 print("deffered")
             default: break

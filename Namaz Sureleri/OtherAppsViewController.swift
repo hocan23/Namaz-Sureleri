@@ -84,6 +84,7 @@ class OtherAppsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         if isAd == true {
             self.dismiss(animated: true)
             
@@ -264,6 +265,7 @@ class OtherAppsViewController: UIViewController {
     }
     @objc func backViewTapped(){
         backView.zoomIn()
+        if Utils.isPremium != "premium"{
 
         if interstitial != nil {
             interstitial?.present(fromRootViewController: self)
@@ -272,7 +274,11 @@ class OtherAppsViewController: UIViewController {
             print("Ad wasn't ready")
             self.dismiss(animated: true)
         }
-    }
+        }else{
+            self.dismiss(animated: true)
+
+        }
+}
 }
 extension OtherAppsViewController: SKProductsRequestDelegate, SKPaymentTransactionObserver{
     
@@ -300,13 +306,15 @@ extension OtherAppsViewController: SKProductsRequestDelegate, SKPaymentTransacti
                 SKPaymentQueue.default().finishTransaction(transaction)
                 Utils.saveLocal(array: "premium", key: "purchase")
                 Utils.isPremium = "premium"
-
+                removeView.isHidden = true
+                bannerView.isHidden = true
             case .failed:
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .restored:
                 Utils.saveLocal(array: "premium", key: "purchase")
                 Utils.isPremium = "premium"
-
+                removeView.isHidden = true
+                bannerView.isHidden = true
                 print("restore")
             case .deferred:
                 print("deffered")

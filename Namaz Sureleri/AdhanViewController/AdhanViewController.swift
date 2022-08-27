@@ -268,6 +268,8 @@ class AdhanViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func BackButtonPressed(_ sender: Any) {
+        if Utils.isPremium != "premium"{
+
         if interstitial != nil {
             interstitial?.present(fromRootViewController: self)
             isAd = true
@@ -278,6 +280,10 @@ class AdhanViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         
+        }else{
+            self.dismiss(animated: true)
+        
+        }
     }
     func setLocationActive(){
         // Ask for Authorisation from the User.
@@ -370,13 +376,15 @@ extension AdhanViewController: SKProductsRequestDelegate, SKPaymentTransactionOb
                 SKPaymentQueue.default().finishTransaction(transaction)
                 Utils.saveLocal(array: "premium", key: "purchase")
                 Utils.isPremium = "premium"
-
+                removeView.isHidden = true
+                bannerView.isHidden = true
             case .failed:
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .restored:
                 Utils.saveLocal(array: "premium", key: "purchase")
                 Utils.isPremium = "premium"
-
+                removeView.isHidden = true
+                bannerView.isHidden = true
                 print("restore")
             case .deferred:
                 print("deffered")

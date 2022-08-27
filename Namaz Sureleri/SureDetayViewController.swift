@@ -222,13 +222,15 @@ extension SureDetayViewController: SKProductsRequestDelegate, SKPaymentTransacti
                 SKPaymentQueue.default().finishTransaction(transaction)
                 Utils.saveLocal(array: "premium", key: "purchase")
                 Utils.isPremium = "premium"
-
+                removeButton.isHidden = true
+                bannerView.isHidden = true
             case .failed:
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .restored:
                 Utils.saveLocal(array: "premium", key: "purchase")
                 Utils.isPremium = "premium"
-
+                removeButton.isHidden = true
+                bannerView.isHidden = true
                 print("restore")
             case .deferred:
                 print("deffered")

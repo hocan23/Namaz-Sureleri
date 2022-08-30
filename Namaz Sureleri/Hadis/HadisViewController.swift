@@ -36,7 +36,8 @@ class HadisViewController: UIViewController,UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        SKPaymentQueue.default().add(self)
+
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "HadisTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
@@ -54,6 +55,7 @@ class HadisViewController: UIViewController,UITableViewDataSource, UITableViewDe
             backWidthCons.constant = 60
             tableLeadingCons.constant = 100
             tableTrailingCons.constant = 100
+            tableBottomCons.constant = 100
         }
         // Do any additional setup after loading the view. bannerView = GADBannerView(adSize: GADAdSizeBanner)
        
@@ -71,7 +73,13 @@ class HadisViewController: UIViewController,UITableViewDataSource, UITableViewDe
         }else{
             createAdd()
             removeButtonView.isHidden = false
-            bannerView = GADBannerView(adSize: GADAdSizeBanner)
+            if UIDevice.current.userInterfaceIdiom == .pad  {
+                bannerView = GADBannerView(adSize: GADAdSizeLeaderboard)
+
+            }else{
+                bannerView = GADBannerView(adSize: GADAdSizeBanner)
+
+            }
             bannerView.adUnitID = Utils.bannerId
             bannerView.rootViewController = self
             bannerView.load(GADRequest())
@@ -84,6 +92,7 @@ class HadisViewController: UIViewController,UITableViewDataSource, UITableViewDe
 
         if SKPaymentQueue.canMakePayments(){
             let set :  Set<String> = [Products.removeAds.rawValue]
+            print(Products.removeAds.rawValue)
             let productRequest = SKProductsRequest(productIdentifiers: set)
             productRequest.delegate = self
             productRequest.start()
@@ -225,7 +234,7 @@ class HadisViewController: UIViewController,UITableViewDataSource, UITableViewDe
 extension HadisViewController: SKProductsRequestDelegate, SKPaymentTransactionObserver{
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        print(response.products.first)
+        print(response.products)
         if let oproduct = response.products.first{
             
             self.purchase(aproduct: oproduct)

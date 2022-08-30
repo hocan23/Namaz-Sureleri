@@ -12,6 +12,7 @@ import GoogleMobileAds
 class SureViewController: UIViewController {
     
 
+    @IBOutlet weak var tableBottomCons: NSLayoutConstraint!
     @IBOutlet weak var table2: UITableView!
     @IBOutlet weak var backHeightConstant: NSLayoutConstraint!
     @IBOutlet weak var backWidthConstant: NSLayoutConstraint!
@@ -50,6 +51,7 @@ class SureViewController: UIViewController {
         if UIDevice.current.userInterfaceIdiom == .pad  {
             backHeightConstant.constant = 60
             backWidthConstant.constant = 60
+            tableBottomCons.constant = 100
 //            bottomNamazHeightCons.constant = 60
 //            topNamazheightCons.constant = 60
 
@@ -66,7 +68,13 @@ class SureViewController: UIViewController {
         }else{
             createAdd()
             removeButton.isHidden = false
-            bannerView = GADBannerView(adSize: GADAdSizeBanner)
+            if UIDevice.current.userInterfaceIdiom == .pad  {
+                bannerView = GADBannerView(adSize: GADAdSizeLeaderboard)
+
+            }else{
+                bannerView = GADBannerView(adSize: GADAdSizeBanner)
+
+            }
             bannerView.adUnitID = Utils.bannerId
             bannerView.rootViewController = self
             bannerView.load(GADRequest())

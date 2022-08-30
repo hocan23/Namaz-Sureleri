@@ -155,7 +155,13 @@ class KibleViewController: UIViewController,GADBannerViewDelegate, GADFullScreen
         }else{
             createAdd()
             removeView.isHidden = false
-            bannerView = GADBannerView(adSize: GADAdSizeBanner)
+            if UIDevice.current.userInterfaceIdiom == .pad  {
+                bannerView = GADBannerView(adSize: GADAdSizeLeaderboard)
+
+            }else{
+                bannerView = GADBannerView(adSize: GADAdSizeBanner)
+
+            }
             bannerView.adUnitID = Utils.bannerId
             bannerView.rootViewController = self
             bannerView.load(GADRequest())

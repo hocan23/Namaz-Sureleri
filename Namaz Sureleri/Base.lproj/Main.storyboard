@@ -288,6 +288,7 @@
                         <outlet property="forthLeftView" destination="sAX-cW-F5i" id="7j9-E5-JFB"/>
                         <outlet property="forthRightView" destination="9GT-Kb-4w9" id="F7b-e8-oR1"/>
                         <outlet property="removeBackView" destination="5fs-hR-R37" id="O6D-ni-a2d"/>
+                        <outlet property="removeBottomCons" destination="vum-EV-iRp" id="UDn-TU-tfp"/>
                         <outlet property="removeView" destination="NYH-7w-jgd" id="eNr-Ju-ZWm"/>
                         <outlet property="secondLeftLabel" destination="USR-qm-sLr" id="vm6-yM-6PI"/>
                         <outlet property="secondLeftView" destination="jkn-4i-ufe" id="fR7-0N-Hro"/>
@@ -433,6 +434,7 @@
                         <outlet property="backHeightCons" destination="bMs-ju-Tj9" id="zwn-UP-Fvg"/>
                         <outlet property="backwidthCons" destination="aWN-xa-1jS" id="dXt-6K-qpA"/>
                         <outlet property="blueView" destination="s22-wM-AbJ" id="m10-lA-2Ie"/>
+                        <outlet property="buttonBottomCons" destination="Vej-Nf-fRH" id="IEP-rc-v1Z"/>
                         <outlet property="buttonsHeightCons" destination="376-3V-oQI" id="3mo-A0-hFf"/>
                         <outlet property="grayImage" destination="9IP-pU-eVw" id="iQk-Ab-hU9"/>
                         <outlet property="imageTopConstraint" destination="x8r-dt-tFW" id="Ec3-lE-DcD"/>
@@ -1397,6 +1399,7 @@ Tesbih Sayacı</string>
                         <outlet property="backWidthConstant" destination="7cS-PA-WoC" id="cu7-a5-pxr"/>
                         <outlet property="removeButton" destination="mcG-hb-AWK" id="LJB-GE-MKe"/>
                         <outlet property="table2" destination="D6c-ni-yHk" id="XVl-98-l2J"/>
+                        <outlet property="tableBottomCons" destination="59L-vu-tw4" id="eu9-fP-nql"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBt-Y5-6kA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1466,6 +1469,9 @@ Tesbih Sayacı</string>
                             </imageView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4hw-eb-Crw">
                                 <rect key="frame" x="88" y="757" width="298" height="31"/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="qM8-0l-RTk" eventType="valueChanged" id="6cn-KN-jgV"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ycq-de-enM"/>

@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var secondRightLabel: UILabel!
     
+    @IBOutlet weak var removeBottomCons: NSLayoutConstraint!
     
     
     @IBOutlet weak var topLeftLabel: UILabel!
@@ -115,7 +116,8 @@ class ViewController: UIViewController {
 
         if UIDevice.current.userInterfaceIdiom == .pad  {
 //            topHeightProportionConstant.constant = 0.25
-            topHeightConstant.constant = view.frame.height*0.02
+            topHeightConstant.constant = view.frame.height*0.016
+            removeBottomCons.constant = 100
         }else{
             topRightTrailingConstant.constant = view.frame.width*0.07
             topLeftLeadingConstant.constant = view.frame.width*0.07
@@ -144,7 +146,13 @@ class ViewController: UIViewController {
         }else{
             createAdd()
             removeView.isHidden = false
-            bannerView = GADBannerView(adSize: GADAdSizeBanner)
+            if UIDevice.current.userInterfaceIdiom == .pad  {
+                bannerView = GADBannerView(adSize: GADAdSizeLeaderboard)
+
+            }else{
+                bannerView = GADBannerView(adSize: GADAdSizeBanner)
+
+            }
             bannerView.adUnitID = Utils.bannerId
             bannerView.rootViewController = self
             bannerView.load(GADRequest())

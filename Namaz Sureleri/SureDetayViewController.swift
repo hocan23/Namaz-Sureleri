@@ -20,7 +20,12 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var playButton: UIImageView!
     @IBOutlet weak var removeButton: UIImageView!
     @IBOutlet weak var backButton: UIImageView!
-    var player : AVAudioPlayer?
+    
+    var audioPlayer : AVAudioPlayer!
+ 
+    var isPlaying = false
+
+    var musicTime : Int?
     var index : Int?
     var timer: Timer?
     var isAd = false
@@ -32,8 +37,12 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
     private var interstitial: GADInterstitialAd?
     override func viewDidLoad() {
         super.viewDidLoad()
-        audioSlider.value = 0.0
-        audioSlider.maximumValue = 1
+        var timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
+        soundPlay()
+        audioPlayer.stop()
+        isPlaying = false
+        audioPlayer.delegate = self
+        audioSlider.maximumValue = Float(audioPlayer.duration)
         print(Utils.sureMetin[0])
         textView.text = Utils.sureIcerigi[index!]
         if view.frame.height < 715 {
@@ -48,8 +57,8 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
         removeButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(removeButtonTapped)))
         playButton.isUserInteractionEnabled = true
         playButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(playButtonTapped)))
-        audioSlider.isUserInteractionEnabled = true
-        audioSlider.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(audioSliderTapped)))
+//        audioSlider.isUserInteractionEnabled = true
+//        audioSlider.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(audioSliderTapped)))
         textView.layer.cornerRadius = 20
         arrangeShadowforViews(vieww: textView)
         textView.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 10)
@@ -57,6 +66,7 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
         if UIDevice.current.userInterfaceIdiom == .pad  {
             backWidthConstan.constant = 60
             backHeightConstant.constant = 60
+            playerBottomCons .constant = 100
         }
     }
     
@@ -74,7 +84,13 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
         }else{
             createAdd()
             removeButton.isHidden = false
-            bannerView = GADBannerView(adSize: GADAdSizeBanner)
+            if UIDevice.current.userInterfaceIdiom == .pad  {
+                bannerView = GADBannerView(adSize: GADAdSizeLeaderboard)
+
+            }else{
+                bannerView = GADBannerView(adSize: GADAdSizeBanner)
+
+            }
             bannerView.adUnitID = Utils.bannerId
             bannerView.rootViewController = self
             bannerView.load(GADRequest())
@@ -90,9 +106,68 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
         vieww.layer.shadowRadius = 10
         vieww.layer.shadowOpacity = 1
     }
+    
+    
+  
+    
+    
+    @objc func updateSlider() {
+        
+        audioSlider.value = Float(audioPlayer.currentTime)
+      
+        if isPlaying {
+              
+            playButton.image = UIImage(systemName: "pause.circle.fill")
+
+            }
+            
+            
+            else {
+            
+               
+                playButton.image = UIImage(systemName: "play.circle.fill")
+        }
+      
+       
+        
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        isPlaying = false
+        playButton.image = UIImage(systemName: "play.circle.fill")
+    }
+    
+    func soundPlay (){
+    
+            
+        let soundUrl = Bundle.main.url(forResource: Utils.soundtag[index!], withExtension: "mp3")
+            
+            do {
+
+                try audioPlayer = AVAudioPlayer(contentsOf: soundUrl!)
+            }
+                
+            catch {
+                
+                print(error)
+                
+            }
+           
+                       audioPlayer.play()
+                       isPlaying = true
+
+        }
+
+    
+    
+    
+    
+    
+    
+    
     @objc func backButtonTapped(){
         backButton.zoomIn()
-        player?.stop()
+        audioPlayer?.stop()
         dismiss(animated: true)
 //        if interstitial != nil {
 //            player?.stop()
@@ -116,16 +191,17 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     
-    @objc func audioSliderTapped (){
-        print(TimeInterval( audioSlider.value))
-        player?.currentTime = TimeInterval( audioSlider.value)
-//        player?.play(atTime: timer?.timeInterval ?? 0)
-    }
+//    @objc func audioSliderTapped (){
+//        print(TimeInterval( audioSlider.value))
+//        player?.currentTime = TimeInterval( audioSlider.value)
+//        player?.play(atTime: 30)
+////        player?.play(atTime: timer?.timeInterval ?? 0)
+//    }
     
     
     @objc func removeButtonTapped(){
         removeButton.zoomIn()
-        player?.stop()
+        audioPlayer?.stop()
         if SKPaymentQueue.canMakePayments(){
             let set :  Set<String> = [Products.removeAds.rawValue]
             let productRequest = SKProductsRequest(productIdentifiers: set)
@@ -134,64 +210,71 @@ class SureDetayViewController: UIViewController, AVAudioPlayerDelegate {
             
         }
     }
+    @IBAction func sliderChanged(_ sender: Any) {
+        audioPlayer.stop()
+        audioPlayer.currentTime = TimeInterval(audioSlider.value)
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
+    }
     
     @objc func playButtonTapped(){
         playButton.zoomIn()
+        
+        if isPlaying {
+            audioPlayer.pause()
+            isPlaying = false
+                  playButton.image = UIImage(systemName: "play.circle.fill")
 
-//        audioSlider.value = 0.0
-//        audioSlider.maximumValue = Float((player?.duration)!)
-        playMusic(name: "\(Utils.soundtag[index!])", type: "mp3")
-
-//         audioPlayer.play()
-         timer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(self.updateSlider), userInfo: nil, repeats: true)
-    }
-    @objc func updateSlider(){
-
-        audioSlider.value = Float( player!.currentTime/(player?.duration ?? 0))
-            print("Changing works")
         }
+        
+        
+        else {
+            audioPlayer.play()
+            isPlaying = true
+          playButton.image = UIImage(systemName: "pause.circle.fill")
+    }
+
+    }
+   
     func stopPlayer() {
-        player?.stop()
+        audioPlayer?.stop()
         timer?.invalidate()
         print("Player and timer stopped")
       }
 
-    public func playMusic (name:String,type:String){
-        
-        if let player = player, player.isPlaying{
-            player.stop()
-            playButton.image = UIImage(systemName: "play.circle.fill")
-//            audioSlider.value = 0
-        }else{
-         
-            let urlString = Bundle.main.path(forResource: name, ofType: type)
-            
-            
-            do {
-                try AVAudioSession.sharedInstance().setMode(.default)
-                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-                guard let urlString = urlString else{
-                    return
-                }
-                player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-                player?.delegate = self
-                
-                guard let player = player else{
-                    return
-                }
-                player.play()
-                playButton.image = UIImage(systemName: "pause.circle.fill")
-
-            }
-            catch{
-                print("not work")
-            }
-        }
-    }
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        print("finished")//It is working now! printed "finished"!
-        playButton.image = UIImage(systemName: "play.circle.fill")
-    }
+//    public func playMusic (name:String,type:String){
+//
+//        if let player = player, player.isPlaying{
+//            player.stop()
+//            playButton.image = UIImage(systemName: "play.circle.fill")
+////            audioSlider.value = 0
+//        }else{
+//
+//            let urlString = Bundle.main.path(forResource: name, ofType: type)
+//
+//
+//            do {
+//                try AVAudioSession.sharedInstance().setMode(.default)
+//                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+//                guard let urlString = urlString else{
+//                    return
+//                }
+//                player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+//                player?.delegate = self
+//
+//                guard let player = player else{
+//                    return
+//                }
+//                player.play()
+//                playButton.image = UIImage(systemName: "pause.circle.fill")
+//
+//            }
+//            catch{
+//                print("not work")
+//            }
+//        }
+//    }
+   
     
 
 }

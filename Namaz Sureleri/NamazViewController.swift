@@ -19,6 +19,7 @@ class NamazViewController: UIViewController {
     
     
     
+    @IBOutlet weak var buttonBottomCons: NSLayoutConstraint!
     @IBOutlet weak var textTrailingConstant: NSLayoutConstraint!
     @IBOutlet weak var textLeadingConstant: NSLayoutConstraint!
     
@@ -74,7 +75,13 @@ class NamazViewController: UIViewController {
         }else{
             createAdd()
             removeView.isHidden = false
-            bannerView = GADBannerView(adSize: GADAdSizeBanner)
+            if UIDevice.current.userInterfaceIdiom == .pad  {
+                bannerView = GADBannerView(adSize: GADAdSizeLeaderboard)
+
+            }else{
+                bannerView = GADBannerView(adSize: GADAdSizeBanner)
+
+            }
             bannerView.adUnitID = Utils.bannerId
             bannerView.rootViewController = self
             bannerView.load(GADRequest())
@@ -126,7 +133,7 @@ class NamazViewController: UIViewController {
             afterButton.font = afterButton.font!.withSize(UIScreen.main.bounds.size.height*0.02)
             textLeadingConstant.constant = 100
             textTrailingConstant.constant = 100
-
+            buttonBottomCons.constant = 100
         }
         
         

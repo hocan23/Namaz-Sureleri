@@ -201,8 +201,8 @@ class AdhanViewController: UIViewController, CLLocationManagerDelegate {
         
         fajrLbl.text = "İmsak"
         sunsetLbl.text = "Akşam"
-        asrLbl.text = "Öğle"
-        dhuhrLbl.text = "İkindi"
+        asrLbl.text = "İkindi"
+        dhuhrLbl.text = "Öğle"
         ishaLbl.text = "Yatsı"
         sunriseLbl.text = "Güneş"
     }

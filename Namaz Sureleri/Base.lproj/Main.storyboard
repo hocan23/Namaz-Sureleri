@@ -221,10 +221,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fs-hR-R37" userLabel="remove">
-                                <rect key="frame" x="20" y="731" width="374" height="76"/>
+                                <rect key="frame" x="20" y="739" width="374" height="68"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="proBtnBig" translatesAutoresizingMaskIntoConstraints="NO" id="NYH-7w-jgd">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="76"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="68"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -252,7 +252,7 @@
                             <constraint firstItem="YS6-DH-Y2G" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DUn-om-Khs"/>
                             <constraint firstItem="jkn-4i-ufe" firstAttribute="height" secondItem="DOr-tV-Qq5" secondAttribute="height" id="I5D-V6-Mju"/>
                             <constraint firstItem="2O2-Q4-H7O" firstAttribute="leading" secondItem="KNL-Oq-1rH" secondAttribute="leading" id="J2Y-Y9-jl6"/>
-                            <constraint firstItem="5fs-hR-R37" firstAttribute="height" secondItem="YS6-DH-Y2G" secondAttribute="height" multiplier="0.085" id="OO9-JG-r7F"/>
+                            <constraint firstItem="5fs-hR-R37" firstAttribute="height" secondItem="YS6-DH-Y2G" secondAttribute="height" multiplier="0.076" id="OO9-JG-r7F"/>
                             <constraint firstItem="YS6-DH-Y2G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QnG-nU-App"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DOr-tV-Qq5" secondAttribute="trailing" constant="20" id="aGs-Jd-nV7"/>
                             <constraint firstItem="bMX-7E-vzI" firstAttribute="height" secondItem="DOr-tV-Qq5" secondAttribute="height" id="aiV-UN-jJT"/>
@@ -1344,14 +1344,14 @@ Tesbih Sayacı</string>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="surecell2" id="O1O-v2-j8E" customClass="Sure2TableViewCell" customModule="Namaz_Sureleri" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O1O-v2-j8E" id="UtO-Bn-kx0">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83M-cS-tN4">
-                                                    <rect key="frame" x="40" y="11" width="354" height="21.5"/>
+                                                    <rect key="frame" x="40" y="11" width="354" height="21"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

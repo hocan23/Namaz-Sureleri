@@ -12,7 +12,7 @@ import Lottie
 
 class Utils{
     static var fullScreenAdId = "ca-app-pub-1501030234998564/7344504294"
-    static var  bannerId = "ca-app-pub-1501030234998564/2283749303"
+    static var  bannerId = "ca-app-pub-3940256099942544/6300978111"
     static var isPremium : String?
     static var isFirstOpen = true
     static var sureIcerigi = [String]()

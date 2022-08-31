@@ -124,16 +124,16 @@ class NamazViewController: UIViewController {
             textViewTopConstraint.constant = 80
             previousLeadingCons.constant = 60
             afterTrailingCons.constant = 60
-            buttonsHeightCons.constant = 80
-            blueView.layer.cornerRadius = 40
-            grayImage.layer.cornerRadius = 40
+            buttonsHeightCons.constant = 60
+            blueView.layer.cornerRadius = 30
+            grayImage.layer.cornerRadius = 30
             backwidthCons.constant = 60
             backHeightCons.constant = 60
             previousButton.font = previousButton.font!.withSize(UIScreen.main.bounds.size.height*0.02)
             afterButton.font = afterButton.font!.withSize(UIScreen.main.bounds.size.height*0.02)
             textLeadingConstant.constant = 100
             textTrailingConstant.constant = 100
-            buttonBottomCons.constant = 100
+            buttonBottomCons.constant = 95
         }
         
         

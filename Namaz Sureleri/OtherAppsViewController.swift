@@ -223,7 +223,7 @@ class OtherAppsViewController: UIViewController {
     @objc func topRightViewTapped(){
         topRightView.zoomIn()
 
-        if let url = URL(string: "https://apps.apple.com/us/app/dhikr-tasbeeh-counter-app/id1639099844") {
+        if let url = URL(string: "https://apps.apple.com/us/app/3d-gerçek-tesbih-ve-zikirmatik/id1641592564") {
             UIApplication.shared.open(url)
         }
     }
